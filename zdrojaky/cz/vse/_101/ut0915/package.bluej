@@ -1,0 +1,21 @@
+#BlueJ package file
+package.editor.height=286
+package.editor.width=278
+package.editor.x=475
+package.editor.y=449
+package.numDependencies=0
+package.numTargets=2
+package.showExtends=true
+package.showUses=true
+target1.height=62
+target1.name=xpecr999_pecinovsky
+target1.type=PackageTarget
+target1.width=150
+target1.x=10
+target1.y=170
+target2.height=62
+target2.name=xmeda08_medvedeva
+target2.type=PackageTarget
+target2.width=150
+target2.x=10
+target2.y=90
