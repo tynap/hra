@@ -106,15 +106,24 @@ public class Hands implements IBag
      * @return By-li objekt přidán, vrátí {@code true}, nebyl-li přidán
      *
      */
-    boolean add(Something thing)
+    boolean add(Something something)
     {
-        if (objects.size() + thing.getWeight() > CAPACITY) {
+        if (objects.size() + something.getWeight() > CAPACITY) {
             return false;
         }
-        objects.add(thing);
+        objects.add(something);
         return true;
     }
 
+    /***************************************************************************
+     * Odebere zadaný objekt z daného prostoru.
+     *
+     * @param thing Odebíraný objekt
+     */
+    void remove(Something something)
+    {
+        objects.remove(something);
+    }
 
     /***************************************************************************
      * Uvede batoh do počátečního stavu pro start hry..

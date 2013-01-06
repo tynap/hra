@@ -284,7 +284,13 @@ public enum Place implements IPlace
         objects.remove(something);
     }
 
-
+    /**********************************************************************
+     * Přidá zadaný objekt z rukou do prostoru.
+     */
+   void add(Something something)
+    {
+        objects.add(something);
+    }
 
 //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
 //== PRIVATE AND AUXILIARY INSTANCE METHODS ====================================
@@ -329,6 +335,7 @@ public enum Place implements IPlace
 //     */
 //    public static void test()
 //    {
+//        Place inst = new Place();
 //    }
 //    /** @param args Command line arguments - not used. */
 //    public static void main(String[] args)  {  test();  }
