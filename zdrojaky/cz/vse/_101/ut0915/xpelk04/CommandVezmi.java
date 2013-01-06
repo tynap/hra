@@ -65,7 +65,7 @@ public class CommandVezmi extends ACommand
             return "Nebylo zadáno co mám vzít";
         }
         String thingName = arguments[1];
-        Room currentRoom = Room.getCurrentRoom();
+        Place currentRoom = Place.getCurrentRoom();
         for (Thing thing : currentRoom.getObjects()) {
             if (thingName.equalsIgnoreCase(thing.getName())) {
                 if (thing.getWeight() > 1) {

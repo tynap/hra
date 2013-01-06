@@ -177,9 +177,9 @@ public class Game implements IGame
      * @return Kolekce odkazů na všechny prostory vystupující ve hře
      */
     @Override
-    public Collection<Room> getAllPlaces()
+    public Collection<Place> getAllPlaces()
     {
-        return Room.getAllRooms();
+        return Place.getAllRooms();
     }
 
 
@@ -190,9 +190,9 @@ public class Game implements IGame
      * @return Prostor, v němž se hráč pravé nachází
      */
     @Override
-    public Room getCurrentPlace()
+    public Place getCurrentPlace()
     {
-        return Room.getCurrentRoom();
+        return Place.getCurrentRoom();
     }
 
 

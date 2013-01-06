@@ -37,42 +37,72 @@ import java.util.Collection;
  * @author  Kristýna PELEŠKOVÁ
  * @version 0.00.0000 — 20yy-mm-dd
  */
-public enum Room implements IPlace
+public enum Place implements IPlace
 {
 //== VALUES OF THE ENUMERATION TYPE ============================================
 //
-    Předsíň ("Vstupní prostor, v němž začíná hra",
-            new String[] { "Ložnice", "Koupelna", "Obývák" },
-            "#Botník", "Deštník")
+    Start("Vstupní prostor, v němž začíná hra",
+            new String[] {"Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
+            "#Banán", "Sáček", "Šátek")
     ,
-    Koupelna("Pomocný prostor, kde můžete získat potřebné předměty",
-            new String[] { "Předsíň" },
-            "Brýle", "#Umyvadlo", "Časopis")
+    Občerstvení("Pomocný prostor, kde můžete získat potřebné předměty",
+            new String[] {  "Pavilon_krokodýlů", "Start", "Pavilon_opic"  },
+            "Salám", "Pití", "Cigarety", "Pastička")
     ,
-    Obývák  ("Průchozí prostor, kudy se dá také dojít od kuchyně",
-            new String[] { "Kuchyň", "Předsíň" },
-            "Televize")
+    Pavilon_opic("Průchozí prostor",
+            new String[] { "Start", "Občerstvení"}
+            )
     ,
-    Kuchyň  ("Prostor, v němž je hledaný předmět - lednička",
-            new String[] { "Obývák", "Ložnice" },
-            "#Lednička", "Papír")
-    ,
-    Ložnice ("Pomocný, ve hře nepoužívaný prostor",
-            new String[] { "Kuchyň", "Předsíň" },
-             "#Postel", "Župan")
-    ,
-    Lednička("Cílový prostor, odkud si můžete vzít něco k jídlu",
-            new String[] {},
-            "@Pivo", "@Pivo", "@Pivo", "Salám", "Houska", "@Víno", "@Rum")
-    ;
 
+    Výběh_s_koňmi("Pomocný neprůchozí prostor",
+            new String [] {"Pavilon_hlodavců"}
+            )
+   ,
+
+    Pavilon_krokodýlů("Pomocný průchozí prostor",
+            new String[] {"Občerstvení", "Pavilon_hlodavců", "Start"  }
+             )
+
+    ,
+
+    Terária_s_hady("Pomocný prostor, kde můžete získat potřebné předměty",
+            new String[] {"Sloni", "Pavilon_hlodavců"},
+            "#Had", "Voda")
+    ,
+
+     Pavilon_hlodavců("Pomocný prostor, kde můžete získat potřebné předměty",
+            new String[] { "Pavilon_krokodýlů", "Výběh_s_koňmi", "Terária_s_hady"},
+             "#Klec", "Myš")
+     ,
+
+
+     Sloni("Pomocný prostor, kde můžete získat potřebné předměty",
+            new String[] {"Voliéra", "Terária_s_hady", "Obchod_se_suvenýry"},
+           "CD", "Seno")
+    ,
+
+     Voliéra("Pomocný neprůchozí prostor",
+            new String[] {"Sloni"}
+            )
+     ,
+
+    Obchod_se_suvenýry("Pomocný prostor, kde můžete získat potřebné předměty",
+          new String[] {"Sloni", "Exit"},
+          "Plyšák", "Pohled")
+    ,
+
+     Exit("Prostor, ze kterého se můžete bezpečně dostat ven a ukončit hru",
+          new String[] {"Obchod_se_suvenýry"}
+          )
+
+;
 
 
 //== CONSTANT CLASS ATTRIBUTES =================================================
 //== VARIABLE CLASS ATTRIBUTES =================================================
 
     /** Aktuální místnost, tj. místnost, v níž se hráč právě nachází. */
-    private static Room currentRoom;
+    private static Place currentPlace;
 
 
 
@@ -103,7 +133,7 @@ public enum Room implements IPlace
     private final Collection<Thing> objects = new ArrayList<>();
 
     /** Aktuální sousedé prostoru. */
-    private final Collection<Room> neighbors = new ArrayList<>();
+    private final Collection<Place> neighbors = new ArrayList<>();
 
 
 
@@ -117,10 +147,10 @@ public enum Room implements IPlace
      */
     public static void initializeRooms()
     {
-        for (Room room : values()) {
+        for (Place room : values()) {
             room.initialize();
         }
-        currentRoom = Předsíň;
+        currentPlace = Start;
     }
 
 
@@ -129,7 +159,7 @@ public enum Room implements IPlace
      *
      * @return Kolekce odkazů na všechny prostory vystupující ve hře
      */
-    static Collection<Room> getAllRooms()
+    static Collection<Place> getAllRooms()
     {
 //        //Verze rozepsaná do několika příkazů
 //        Room[] roomsArr = values();
@@ -147,9 +177,9 @@ public enum Room implements IPlace
      *
      * @return Místnost, v níž se hráč pravé nachází
      */
-    static Room getCurrentRoom()
+    static Place getCurrentRoom()
     {
-        return currentRoom;
+        return currentPlace;
     }
 
 
@@ -160,9 +190,9 @@ public enum Room implements IPlace
      *
      * @param room Nastavovaná aktuální místnost
      */
-    static void setCurrentRoom(Room room)
+    static void setCurrentRoom(Place room)
     {
-        currentRoom = room;
+        currentPlace = room;
     }
 
 
@@ -178,7 +208,7 @@ public enum Room implements IPlace
      * @param neighborNames Názvy sousedů vytvářeného prostoru při startu hry
      * @param objectNames   Názvy objektů ve vytvářeném prostoru při startu hry
      */
-    private Room(String description, String[] neighborNames,
+    private Place(String description, String[] neighborNames,
                                      String... objectNames)
     {
         this.description   = description;
@@ -223,7 +253,7 @@ public enum Room implements IPlace
      * @return Kolekce sousedů
      */
     @Override
-    public Collection<Room> getNeighbors()
+    public Collection<Place> getNeighbors()
     {
         return neighbors;
     }
@@ -267,7 +297,7 @@ public enum Room implements IPlace
     {
         neighbors.clear();
         for (String neighborName : neighborNames) {
-            neighbors.add(Room.valueOf(neighborName));
+            neighbors.add(Place.valueOf(neighborName));
         }
         objects.clear();
         for (String objectName : objectNames) {
