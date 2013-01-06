@@ -40,7 +40,7 @@ public class CommandVezmi extends ACommand
      */
     public CommandVezmi()
     {
-        super("Vezmi", "");
+        super("Vezmi", "Příkaz, který sebere věc.");
     }
 
 
@@ -62,23 +62,23 @@ public class CommandVezmi extends ACommand
     public String execute(String... arguments)
     {
         if (arguments.length < 2) {
-            return "Nebylo zadáno co mám vzít";
+            return "Nezadali jste objekt, který chcete zvednout";
         }
-        String thingName = arguments[1];
+        String somethingName = arguments[1];
         Place currentRoom = Place.getCurrentPlace();
-        for (Something thing : currentRoom.getObjects()) {
-            if (thingName.equalsIgnoreCase(thing.getName())) {
-                if (thing.getWeight() > 1) {
-                    return "Zadaný předmět nejde zvednout: " + thing.getName();
+        for (Something something : currentRoom.getObjects()) {
+            if (somethingName.equalsIgnoreCase(something.getName())) {
+                if (something.getWeight() > 1) {
+                    return "Tento objekt nelze zvednou:" + something.getName();
                 }
-                if (Hands.getInstance().add(thing)) {
-                    currentRoom.remove(thing);
-                    return "Vzal(a) jste předmět: " + thing.getName();
+                if (Hands.getInstance().add(something)) {
+                    currentRoom.remove(something);
+                    return "Zvedl(a) jste " + something.getName();
                 }
-                return "Předmět se již do batohu nevejde: " + thing.getName();
+                return "Máte plné ruce a " + something.getName() + " nemůžete vzít." ;
             }
         }
-        return "Zadaný předmět v místnosti není: " + thingName;
+        return "Zadaný předmět v místnosti není:"  + somethingName;
     }
 
 
