@@ -38,8 +38,7 @@ public class CommandJdi extends ACommand
      */
     public CommandJdi()
     {
-        super("Jdi", "Přesune hráče z aktuální prostoru " +
-                     "do zadaného sousedního prostoru,");
+        super("Jdi", "Přesune vás z aktuálního prostoru do zadaného sousedního.");
     }
 
 
@@ -60,18 +59,18 @@ public class CommandJdi extends ACommand
     public String execute(String... arguments)
     {
         if (arguments.length < 2) {
-            return "Nebylo zadáno, kam se přesunout";
+            return "Nezadali jste prostor, do kterého se chcete přesunout";
         }
         String destName = arguments[1];
         Place currentRoom = Place.getCurrentPlace();
         for (Place neighbor : currentRoom.getNeighbors()) {
             if (destName.equalsIgnoreCase(neighbor.getName())) {
                 Place.setCurrentPlace(neighbor);
-                return "Přesunul(a) jste se do místnosti: " +
+                return "Vkročil(a) jste do: "  +
                        neighbor.getName();
             }
         }
-        return "Do zadané místnosti se odsud nedá přejít: " + destName;
+        return  "Do zadaného prostoru odtud nemůžete přejít." + destName;
     }
 
 
