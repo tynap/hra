@@ -62,23 +62,26 @@ public class CommandVezmi extends ACommand
     public String execute(String... arguments)
     {
         if (arguments.length < 2) {
-            return "Nezadali jste objekt, který chcete zvednout";
+            return "Nezadali jste objekt, který chcete zvednout" + status();
         }
         String somethingName = arguments[1];
         Place currentRoom = Place.getCurrentPlace();
         for (Something something : currentRoom.getObjects()) {
             if (somethingName.equalsIgnoreCase(something.getName())) {
                 if (something.getWeight() > 1) {
-                    return "Tento objekt nelze zvednou:" + something.getName();
+                    return "Tento objekt nelze zvednou:" + something.getName()
+                            + status();
                 }
                 if (Hands.getInstance().add(something)) {
                     currentRoom.remove(something);
-                    return "Zvedl(a) jste " + something.getName();
+                    return "Zvedl(a) jste " + something.getName() + status();
                 }
-                return "Máte plné ruce a " + something.getName() + " nemůžete vzít." ;
+                return "Máte plné ruce a " + something.getName() +
+                       " nemůžete vzít." + status() ;
             }
         }
-        return "Zadaný předmět v místnosti není:"  + somethingName;
+        return "Zadaný předmět v místnosti není:"  + somethingName
+                + status();
     }
 
 

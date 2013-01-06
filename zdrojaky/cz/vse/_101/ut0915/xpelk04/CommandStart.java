@@ -60,7 +60,7 @@ public class CommandStart extends ACommand
         Game game = Game.getInstance();
         if (game.isAlive()) {
             return "Zadal(a) jste prázdný příkaz." +
-                    "\nPro nápovědu zadejte příkaz ?";
+                    "\nPro nápovědu zadejte příkaz ?" + status();
         }
         //Inicializuje příkazy, prostory i batoh
         ACommand.initializeCommands();
@@ -74,7 +74,8 @@ public class CommandStart extends ACommand
             "\nvšech zvířat do areálu ZOO. " +
                 "Žádáme vás o co nejrychlejší opuštění zahrady. Děkujeme."+
             "\n\nPřed odchodem do ZOO jste slíbil, " +
-                "že přinesete jako dárek plyšáka, myslete na to během hry";
+                "že přinesete jako dárek plyšáka, myslete na to během hry" +
+               status();
 
     }
 //== PRIVATE AND AUXILIARY CLASS METHODS =======================================

@@ -1,9 +1,7 @@
-/* The file is saved in UTF-8 codepage.
- * Check: «Stereotype», Section mark-§, Copyright-©, Alpha-α, Beta-β, Smile-☺
- */
+/* Soubor je ulozen v kodovani UTF-8.
+ * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package cz.vse._101.ut0915.xpelk04;
 
-import cz.vse._101.po0000.xpecr999_literals_io.*;
 import cz.vse.adv_framework.game_txt.IGame;
 
 import cz.vse.adv_framework.scenario.TypeOfScenario;
@@ -12,29 +10,21 @@ import cz.vse.adv_framework.scenario.AScenarioManager;
 
 import cz.vse.adv_framework.test_util._Test_101;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
 
 import static  cz.vse.adv_framework.scenario.TypeOfStep.*;
 
 
 
 /*******************************************************************************
- * Instance třídy {@code ManagerWithLiterals} slouží jako správce scénářů,
+ * Instance třídy {@code ScenarioManager} slouží jako správce scénářů,
  * které mají prověřit a/nebo demonstrovat správnou funkci plánované hry.
  * Jednotlivé scénáře jsou iterovatelné posloupností kroků specifikovaných
  * instancemi třídy <code>ScenarioStep</code> z rámce, do nějž se hra začleňuje.
  * <p>
- * Tato třída poskytuje definice používající přímé zadávání textů.
- * Slouží pouze k demonstraci rozdílu oproti třídě (správci scénářů)
- * používající konstanty a nejsou u ní proto průběžně upravovány detaily tak,
- * aby s její pomocí byla hra doopravdy testovatelná.
- * <p>
  * Správce scénářů je jedináček, který má na starosti všechny scénáře
  * týkající se s ním sdružené hry.
  *
- * @author  Kristýna PELEŠKOVÁ
+ * @author Kristýna PELEŠKOVÁ
  * @version 12.01
  */
 public class ScenarioManager extends AScenarioManager
@@ -42,24 +32,13 @@ public class ScenarioManager extends AScenarioManager
 //== CONSTANT CLASS ATTRIBUTES =================================================
 
     /** Třída, jejíž instance jsou zde spravovány. */
-    private final static Class<? extends IGame> CLASS = Game.class;
+    private final static Class<? extends IGame> CLASS = null;
 
     /** Jméno autora dané třídy. */
-    private static final String AUTHOR = "PECINOVSKÝ Rudolf";
+    private static final String AUTHOR = "PELEŠKOVÁ Kristýna";
 
     /** Xname autora/autorky dané třídy. */
-    private static final String XNAME = "XPECR999";
-
-    /** Pomocné konstanty pro rozhovor s ledničkou. */
-    private static final int ROKŮ = 20;
-    private static final int LETOS;
-    private static final int ROK_NAR;
-    static {
-        Calendar cal = new GregorianCalendar();
-        LETOS   = cal.get(Calendar.YEAR);
-        ROK_NAR = LETOS - ROKŮ;
-    }
-
+    private static final String XNAME = "XPELK04";
 
 
     /*==========================================================================
@@ -79,19 +58,21 @@ public class ScenarioManager extends AScenarioManager
      * Počáteční krok hry, který je pro všechny scénáře shodný.
      */
      private static final ScenarioStep START_STEP =
-        new ScenarioStep("", //Název prvního příkazu musí být prázdný řetězec
-            "Vítáme vás ve služebním bytě. Jistě máte hlad." +
-          "\nNajděte v bytě ledničku - tam vás čeká svačina." +
-        "\n\nNacházíte se v místnosti: Předsíň" +
-          "\nMůžete se přesunout do místností: Ložnice, Obývák, Koupelna" +
-          "\nV místnosti se nachází: Botník, Deštník" +
-          "\nMáte v držení předměty:",
+        new ScenarioStep( "", //Název prvního příkazu musí být prázdný řetězec
+            "Upozorňujeme návštěvníky naší zoologické zahrady, že skupinka ochránců přírody" +
+            "\nnarušila náš systém na správu klecí a otevřela všechny dveře, čímž došlo k úniku" +
+            "\nvšech zvířat do areálu ZOO. Žádáme vás o co nejrychlejší opuštění zahrady. Děkujeme."+
+            "\n\nPřed odchodem do ZOO jste slíbil, že přinesete jako dárek plyšáka, myslete na to během hry"+
+            "\n\nNacházíte se v prostoru: Start" +
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Občerstvení, Pavilon_opic" +
+            "\nV prostoru se nachází: Banán, Sáček, Šátek"+
+            "\nV rukách máte:",
 
-            "Předsíň",
-            new String[] { "Ložnice", "Obývák", "Koupelna" },
-            new String[] { "Botník", "Deštník" },
+            "Start",
+            new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
+            new String[] { "Banán", "Sáček", "Šátek" },
             new String[] {},
-            tsSTART);
+            tsSTART );
 
 
     /***************************************************************************
@@ -108,308 +89,246 @@ public class ScenarioManager extends AScenarioManager
     {
         START_STEP,
 
-        new ScenarioStep("jdi koupelna",
-            "Přesunul(a) jste se do místnosti: Koupelna" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Brýle, Umyvadlo, Časopis" +
-          "\nMáte v držení předměty:",
+        new ScenarioStep( "jdi Občerstvení",
+            "Vkročil(a) jste do Občerstvení, které je již z části vyrabované." +
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Brýle", "Umyvadlo", "Časopis" },
+            "\nNacházíte se v prostoru: Občerstvení"+
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Pavilon_Opic, Start"+
+            "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička" +
+            "\nV rukách máte:",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety", "Pastička" },
             new String[] {},
-            tsMOVE),
+            tsMOVE ),
 
-        new ScenarioStep("vezmi brýle",
-            "Vzal(a) jste předmět: Brýle" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Brýle",
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Umyvadlo", "Časopis" },
-            new String[] { "Brýle" },
-            tsPICK_UP),
+        new ScenarioStep( "zvedni Pastička",
 
-        new ScenarioStep("vezmi časopis",
-            "Vzal(a) jste předmět: Časopis" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Umyvadlo" +
-          "\nMáte v držení předměty: Brýle, Časopis",
+            "Zvedl(a) jste pastička" +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Start, Pavilon_Opic" +
+            "\nV prostoru se nachází: Salám, Pití, Cigarety" +
+            "\nV rukách máte: Pastička ",
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Umyvadlo" },
-            new String[] { "Brýle", "Časopis" },
-            tsPICK_UP),
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety" },
+            new String[] {"Pastička"},
+            tsPICK_UP ),
 
-        new ScenarioStep("jdi předsíň",
-            "Přesunul(a) jste se do místnosti: Předsíň" +
-        "\n\nNacházíte se v místnosti: Předsíň" +
-          "\nMůžete se přesunout do místností: Ložnice, Obývák, Koupelna" +
-          "\nV místnosti se nachází: Botník, Deštník" +
-          "\nMáte v držení předměty: Brýle, Časopis",
 
-            "Předsíň",
-            new String[] { "Ložnice", "Obývák", "Koupelna" },
-            new String[] { "Botník", "Deštník" },
-            new String[] { "Brýle", "Časopis" },
-            tsMOVE),
+        new ScenarioStep( "jdi Pavilon_krokodýlů",
+            "Na krokodýly je moc velká zima, proto celý pavilon spí a vy můžete bezpečně projít"+
+            "\nNacházíte se v prostoru: Pavilon_krokodýlů"+
+            "\nMůžete přejít do prostoru: Občerstvení, Pavilon_hlodavců, Start"+
+            "\nV prostoru se nachází:" +
+            "\nV rukách máte: Pastička",
 
-        new ScenarioStep("jdi obývák",
-            "Přesunul(a) jste se do místnosti: Obývák" +
-        "\n\nNacházíte se v místnosti: Obývák" +
-          "\nMůžete se přesunout do místností: Kuchyň, Předsíň" +
-          "\nV místnosti se nachází: Televize" +
-          "\nMáte v držení předměty: Brýle, Časopis",
+            "Pavilon_krokodýlů",
+            new String[] { "Občerstvení", "Pavilon_hlodavců", "Start" },
+            new String[] {},
+            new String[] {"Pastička"},
+            tsMOVE ),
 
-            "Obývák",
-            new String[] { "Kuchyň", "Předsíň" },
-            new String[] { "Televize" },
-            new String[] { "Brýle", "Časopis" },
-            tsMOVE),
 
-        new ScenarioStep("jdi kuchyň",
-            "Přesunul(a) jste se do místnosti: Kuchyň" +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír" +
-          "\nMáte v držení předměty: Brýle, Časopis",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
-            new String[] { "Brýle", "Časopis" },
-            tsMOVE),
+        new ScenarioStep( "jdi Pavilon_hlodavců",
+            "Vkročil(a) jste do Pavilonu hlodavců kde se prohánějí skupinky od hrabošů přes veverky" +
+            "\n po bobry."+
+            "\n\nNacházíte se v prostoru: Pavilon_hlodavců "+
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Výběh_s_koňmi, Terária_s_hady" +
+            "\nV prostoru se nachází: Myš, Klec" +
+            "\nV rukách máte: ",
 
-        new ScenarioStep("otevři lednička",
-            "Lednička nejde otevřít. Na ledničce leží nějaký popsaný papír." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír" +
-          "\nMáte v držení předměty: Brýle, Časopis",
+            "Pavilon_hlodavců",
+            new String[] { "Pavilon_krokodýlů", "Výběh_s_koňmi", "Terária_s_hady" },
+            new String[] { "Myš", "Klec" },
+            new String[] {"Pastička"},
+            tsMOVE ),
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
-            new String[] { "Brýle", "Časopis" },
-            tsNON_STANDARD),
+          new ScenarioStep("?",
+            "\nPříkazy, které je možno v průběhu hry zadat:" +
+            "\n============================================",
+            //Text pokračuje vyjmenováním příkazů a jejich popisů
+            //a končí standardním popisem aktuální situace
 
-        new ScenarioStep("vezmi papír",
-            "Zadaný předmět nemůžete vzít, máte už obě ruce plné." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír" +
-          "\nMáte v držení předměty: Brýle, Časopis",
+            "Pavilon_hlodavců",
+            new String[] { "Pavilon_krokodýlů", "Výběh_s_koňmi", "Terária_s_hady" },
+            new String[] { "Klec", "Myš" },
+            new String[] {"Pastička"},
+            tsHELP),
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
-            new String[] { "Brýle", "Časopis" },
-            tsBAG_FULL),
 
-        new ScenarioStep("polož časopis",
-            "Položil(a) jste předmět: Časopis" +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír, Časopis" +
-          "\nMáte v držení předměty: Brýle",
+        new ScenarioStep("nastraž Pastička",
+           "Nastražil(a) jste pastičku a chytil(a) myš",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír", "Časopis" },
-            new String[] { "Brýle" },
-            tsPUT_DOWN),
+            "Pavilon_hlodavců",
+            new String[] { "Pavilon_krokodýlů", "Výběh_s_koňmi", "Terária_s_hady" },
+            new String[] { "Klec" },
+            new String[] {"Myš"},
+            tsNON_STANDARD ),
 
-        new ScenarioStep("vezmi papír",
-            "Vzal(a) jste předmět: Papír" +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Časopis" +
-          "\nMáte v držení předměty: Brýle, Papír",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Časopis" },
-            new String[] { "Brýle", "Papír" },
-            tsPICK_UP),
 
-        new ScenarioStep("přečti papír",
-            "Rozhodl(a) jste se přečíst vzkaz na papíře." +
-          "\nJe ale psán příliš malým písmem, které je rozmazané" +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Časopis" +
-          "\nMáte v držení předměty: Brýle, Papír",
+        new ScenarioStep( "jdi Terária_s_hady",
+            "Vkročil(a) jste do Terária s hady, kteří po vás mlsně koukají." +
+            "\nNa výměnu za jídlo pro vás mají vědro s vodou. Nakrmte je nebo raději zmizte."+
+            "\n\nNacházíte se v prostoru: Terária_s_hady "+
+            "\nMůžete přejít do prostoru: Pavilon_hlodavců, Sloni" +
+            "\nV prostoru se nachází: Had, Voda" +
+            "\nV rukách máte: Myš",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Časopis" },
-            new String[] { "Brýle", "Papír" },
-            tsNON_STANDARD),
+            "Terária_s_hady",
+            new String[] { "Pavilon_hlodavců", "Sloni" },
+            new String[] { "Had", "Voda" },
+            new String[] {"Myš"},
+            tsMOVE ),
 
-        new ScenarioStep("nasaď brýle",
-            "Nasadil(a) jste si brýle." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Časopis" +
-          "\nMáte v držení předměty: Papír",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Časopis" },
-            new String[] { "Papír" },
-            tsNON_STANDARD),
+            new ScenarioStep( "vyměň Myš",
+            "Nakrmila jste hady a odměnou je vám vědro s vodou." +
 
-        new ScenarioStep("přečti papír",
-            "Na papíru je napsáno:" +
-          "\nLednička stojí nakřivo, a proto jde špatně otevírat." +
-          "\nBudete-li mít problémy, něčím ji podložte." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Časopis" +
-          "\nMáte v držení předměty: Papír",
+            "\n\nNacházíte se v prostoru: Terária_s_hady "+
+            "\nMůžete přejít do prostoru: Pavilon_hlodavců, Sloni" +
+            "\nV prostoru se nachází: Had, Voda" +
+            "\nV rukách máte: Voda",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Časopis" },
-            new String[] { "Papír" },
-            tsNON_STANDARD),
+            "Terária_s_hady",
+            new String[] { "Pavilon_hlodavců", "Sloni" },
+            new String[] { "Had"},
+            new String[] {"Voda"},
+            tsNON_STANDARD ),
 
-        new ScenarioStep("vezmi časopis",
-            "Vzal(a) jste předmět: Časopis" +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička" +
-          "\nMáte v držení předměty: Papír, Časopis",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička" },
-            new String[] { "Časopis", "Papír" },
-            tsPICK_UP),
+            new ScenarioStep( "jdi Sloni",
+            "Vkročil(a) jste do výběhu pro slony, kteří rozzuřeně pobíhají dokola. Nepotřebují" +
+            "\ntrochu schladit studenou sprchou? Být vámi, tak pospíším, ať nedopadnete jako ušlapaný" +
+            "\nošetřovatel ležící v rohu, ke kterému vás výměnou za vodu pustí."+
 
-        new ScenarioStep("podlož lednička časopis",
-            "Rozhodl(a) jste se podložit předmět lednička předmětem časopis." +
-          "\nBohužel máte obě ruce plné a nemáte ji čím nadzvednout." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička" +
-          "\nMáte v držení předměty: Papír, Časopis",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička" },
-            new String[] { "Časopis", "Papír" },
-            tsNON_STANDARD),
+            "\n\nNacházíte se v prostoru: Sloni "+
+            "\nMůžete přejít do prostoru: Voliéra, Terária_s_hady, Obchod_se_suvenýry" +
+            "\nV prostoru se nachází: Ošetřovatelova_karta, CD, Seno" +
+            "\nV rukách máte: Myš",
 
-        new ScenarioStep("polož papír",
-            "Položil(a) jste předmět: Papír" +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír" +
-          "\nMáte v držení předměty: Časopis",
+            "Sloni",
+            new String[] { "Voliéra", "Terária_s_hady", "Obchod_se_suvenýry" },
+            new String[] { "CD", "Seno" },
+            new String[] {"Voda"},
+            tsMOVE ),
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
-            new String[] { "Časopis" },
-            tsPUT_DOWN),
 
-        new ScenarioStep("podlož lednička časopis",
-            "Rozhodl(a) jste se podložit předmět lednička předmětem časopis." +
-          "\nLednička je úspěšně podložena - nyní by již měla jít otevřít." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír" +
-          "\nMáte v držení předměty:",
+            new ScenarioStep( "použij Voda",
+            "Osvěžil(a) jste slony a ty se v klidu přesunuly pryč. Nyní můžete prohledat kapsy"+
+            "\nmrtvému ošetřovateli v rohu."+
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
+
+            "\n\nNacházíte se v prostoru: Sloni "+
+            "\nMůžete přejít do prostoru: Voliéra, Terária_s_Hady, Obchod se suvenýry" +
+            "\nV prostoru se nachází: Ošetřovatelova_karta, CD, Seno" +
+            "\nV rukách máte:",
+
+
+            "Sloni",
+            new String[] { "Voliéra", "Terária_s_Hady", "Obchod_se_suvenýry" },
+            new String[] { "Ošetřovatelova_karta", "CD", "Seno" },
             new String[] {},
             tsNON_STANDARD),
 
-        new ScenarioStep("otevři lednička",
-            "Úspěšně jste otevřel(a) ledničku." +
-        "\n\nNacházíte se v místnosti: Lednička" +
-          "\nMůžete se přesunout do místností:" +
-          "\nV místnosti se nachází: Pivo, Pivo, Pivo, " +
-                                    "Salám, Houska, Víno, Rum" +
-          "\nMáte v držení předměty:",
 
-            "Lednička",
+            new ScenarioStep( "zvedni Ošetřovatelova_karta ",
+            "Zvedl(a) jste Ošetřovatelovu_kartu" +
+
+            "\n\nNacházíte se v prostoru: Sloni "+
+            "\nMůžete přejít do prostoru: Voliéra, Terária_s_hady, Obchod se suvenýry" +
+            "\nV prostoru se nachází: Ošetřovatelova_karta, CD, Seno" +
+            "\nV rukách máte:",
+
+
+            "Sloni",
+            new String[] { "Voliéra", "Terária_s_Hady", "Obchod_se_suvenýry" },
+            new String[] {  "CD", "Seno" },
+            new String[] {"Ošetřovatelova_karta"},
+            tsPICK_UP ),
+
+
+
+
+            new ScenarioStep( "jdi Obchod_se_suvenýry ",
+            "Vkročil(a) jste do Obchod_se_suvenýry, který je již z větší části vyrabovaný." +
+
+            "\n\nNacházíte se v prostoru: Obchod_se_suvenýry "+
+            "\nMůžete přejít do prostoru: Exit, Sloni" +
+            "\nV prostoru se nachází: Plyšák, Pohled" +
+            "\nV rukách máte: Ošetřovatelova_karta",
+
+            "Obchod_se_suvenýry",
+            new String[] { "Sloni", "Exit" },
+            new String[] { "Plyšák", "Pohled" },
+            new String[] {"Ošetřovatelova_karta"},
+            tsMOVE ),
+
+
+
+            new ScenarioStep( "zvedni Plyšák",
+            "Zvedl(a) jste Plyšák" +
+
+            "\n\nNacházíte se v prostoru: Obchod_se_suvenýry "+
+            "\nMůžete přejít do prostoru: Exit, Sloni" +
+            "\nV prostoru se nachází: Pohled" +
+            "\nV rukách máte: Ošetřovatelova_karta, Plyšák",
+
+            "Obchod_se_suvenýry",
+            new String[] { "Sloni", "Exit" },
+            new String[] { "Pohled" },
+            new String[] {"Ošetřovatelova_karta", "Plyšák"},
+            tsPICK_UP ),
+
+
+
+            new ScenarioStep( "jdi Exit ",
+            "Úspěšně jste došli až k východu. Ten je ale bohužel již zamčený, protože jste se na začátku" +
+            "\nzdržel na toaletách po požití prošlé klobásy ze stánku vedle, a zbytek zoo je již dávno"+
+            "\nevakuovaný.Jedinou možností otevření dveří je ošetřovatelova karta, kterou položíte na čtečku."+
+
+            "\n\nNacházíte se v prostoru: Exit "+
+            "\nMůžete přejít do prostoru: Obchod se suvenýry" +
+            "\nV prostoru se nachází: " +
+            "\nV rukách máte: Ošetřovatelova_karta",
+
+            "Exit",
+            new String[] { "Obchod_se_suvenýry" },
             new String[] {},
-            new String[] { "Pivo",  "Pivo",   "Pivo",
-                           "Salám", "Houska", "Víno", "Rum" },
-            new String[] {},
-            tsNON_STANDARD),
+            new String[] {"Ošetřovatelova_karta", "Plyšák"},
+            tsMOVE ),
 
-        new ScenarioStep("vezmi pivo",
-            "Pokoušíte si vzít z inteligentní ledničky Pivo." +
-          "\nToto je inteligentní lednička, která neumožňuje " +
-          "\npodávání alkoholických nápojů mladistvým." +
-          "\nKolik je vám let?",
 
-            "Lednička",
-            new String[] {},
-            new String[] { "Pivo", "Pivo", "Pivo",
-                           "Salám", "Houska", "Víno", "Rum" },
-            new String[] {},
-            tsUNMOVABLE),
+            new ScenarioStep( "polož Ošetřovatelova_karta",
+            "Úspěšně jste otevřeli dveře ze ZOO a vy jste ve zdraví opustil ZOO.",
 
-        new ScenarioStep(""+ROKŮ,
-            "V kterém roce jste se narodil(a)?\n",
+            "Exit",
+            new String[] { "Obchod_se_suvenýry" },
+            new String[] {"Ošetřovatelova_karta"},
+            new String[] {"Plyšák"},
+            tsPUT_DOWN ),
 
-            "Lednička",
-            new String[] {},
-            new String[] { "Pivo", "Pivo", "Pivo",
-                           "Salám", "Houska", "Víno", "Rum" },
-            new String[] {},
-            tsDIALOG),
 
-        new ScenarioStep("" + ROK_NAR,
-            "Věřím vám a předávám vám požadovaný nápoj." +
-          "\nOdebral(a) jste z ledničky: Pivo" +
-          "\nDobrou chuť. Nezapomeňte zavřít ledničku." +
-        "\n\nNacházíte se v místnosti: Lednička" +
-          "\nMůžete se přesunout do místností:" +
-          "\nV místnosti se nachází: Pivo, Pivo," +
-                                    "Salám, Houska, Víno, Rum" +
-          "\nMáte v držení předměty: Pivo",
 
-            "Lednička",
-            new String[] {},
-            new String[] { "Pivo", "Pivo",
-                           "Salám", "Houska", "Víno", "Rum" },
-            new String[] { "Pivo" },
-            tsDIALOG),
+            new ScenarioStep( "konec",
+            " Děkuji, že jste si zahrál(a)"+
+            "\nmoji hru.",
 
-        new ScenarioStep("zavři lednička",
-            "Úspěšně jste zavřel(a) ledničku." +
-        "\n\nNacházíte se v místnosti: Kuchyň" +
-          "\nMůžete se přesunout do místností: Obývák, Ložnice" +
-          "\nV místnosti se nachází: Lednička, Papír" +
-          "\nMáte v držení předměty: Pivo",
+            "Exit",
+            new String[] { "Obchod_se_suvenýry" },
+            new String[] {"Ošetřovatelova_karta"},
+            new String[] {"Plyšák"},
+            tsEND),
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
-            new String[] { "Pivo" },
-            tsNON_STANDARD),
 
-        new ScenarioStep("konec",
-            "Konec hry. \nDěkujeme, že jste zkusil(a) naši hru.",
 
-            "Kuchyň",
-            new String[] { "Obývák", "Ložnice" },
-            new String[] { "Lednička", "Papír" },
-            new String[] { "Pivo" },
-            tsEND)
+
 
 //        UKONČENÍ
     };
@@ -426,163 +345,271 @@ public class ScenarioManager extends AScenarioManager
     {
         START_STEP,
 
-        new ScenarioStep("maso",
+        new ScenarioStep( "ahoj",
             "Tento příkaz neznám." +
-          "\nChcete-li poradit, zadejte příkaz ?" +
-        "\n\nNacházíte se v místnosti: Předsíň" +
-          "\nMůžete se přesunout do místností: Ložnice, Obývák, Koupelna" +
-          "\nV místnosti se nachází: Botník, Deštník" +
-          "\nMáte v držení předměty:",
+            "\nPro nápovědu zadejte příkaz ?" +
 
-            "Předsíň",
-            new String[] { "Ložnice", "Obývák", "Koupelna" },
-            new String[] { "Botník", "Deštník" },
+            "\n\nNacházíte se v prostoru: Start" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení, Pavilon opic" +
+            "\nV prostoru se nachází: Banán, Sáček, Šátek"+
+            "\nV rukách máte:",
+
+            "Start",
+            new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
+            new String[] { "Banán", "Sáček", "Šátek" },
             new String[] {},
-            tsUNKNOWN),
+            tsUNKNOWN ),
 
-        new ScenarioStep("",
-            "Zadal(a) jste prázdný příkaz." +
-        "\n\nNacházíte se v místnosti: Předsíň" +
-          "\nMůžete se přesunout do místností: Ložnice, Obývák, Koupelna" +
-          "\nV místnosti se nachází: Botník, Deštník" +
-          "\nMáte v držení předměty:",
 
-            "Předsíň",
-            new String[] { "Ložnice", "Obývák", "Koupelna" },
-            new String[] { "Botník",  "Deštník" },
+
+
+
+        new ScenarioStep( "",
+            "Zadal(a) jste prázdný příkaz" +
+            "\nPro nápovědu zadejte příkaz ?"+
+
+            "\n\nNacházíte se v prostoru: Cesta" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení, Pavilon opic" +
+            "\nV prostoru se nachází: Banán, Sáček, Šátek"+
+            "\nV rukách máte:",
+
+            "Start",
+            new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
+            new String[] { "Banán", "Sáček", "Šátek" },
             new String[] {},
-            tsEMPTY),
+            tsEMPTY ),
 
-        new ScenarioStep("vezmi deštník",
-            "Vzal(a) jste předmět: Deštník" +
-        "\n\nNacházíte se v místnosti: Předsíň" +
-          "\nMůžete se přesunout do místností: Ložnice, Obývák, Koupelna" +
-          "\nV místnosti se nachází: Botník" +
-          "\nMáte v držení předměty: Deštník",
 
-            "Předsíň",
-            new String[] { "Ložnice", "Obývák", "Koupelna" },
-            new String[] { "Botník" },
-            new String[] { "Deštník" },
+            new ScenarioStep( "zvedni Sáček",
+
+             "Zvedl(a) jste Sáček" +
+            "\n\nNacházíte se v prostoru: Cesta" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení, Pavilon opic" +
+            "\nV prostoru se nachází: Banán, Šátek"+
+            "\nV rukách máte: Sáček",
+
+            "Start",
+            new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
+            new String[] { "Banán", "Šátek" },
+            new String[] {"Sáček"},
+            tsPICK_UP ),
+
+
+
+            new ScenarioStep( "jdi Občerstvení",
+
+            "Vkročil(a) jste do Občerstvení"  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety", "Pastička"},
+            new String[] {"Sáček"},
+            tsMOVE ),
+
+
+            new ScenarioStep( "jdi Terária_s_hady",
+            "Do zadaného prostoru odtud nemůžete přejít."  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety", "Pastička"},
+            new String[] {"Sáček"},
+            tsBAD_NEIGHBOR ),
+
+
+          new ScenarioStep( "zvedni Občerstvení",
+            "Zadaný předmět v místnosti není: Občerstvení"  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety", "Pastička" },
+            new String[] {"Sáček"},
+            tsBAD_OBJECT ),
+
+
+
+             new ScenarioStep( "polož Voda",
+            "Zadaný předmět nemáte v rukách: Voda"  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety", "Pastička"},
+            new String[] {"Sáček"},
+            tsNOT_IN_BAG ),
+
+
+             new ScenarioStep( "zvedni Pití",
+
+             "Zvedl(a) jste Pití"  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček, Pití",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Cigarety", "Pastička"},
+            new String[] {"Sáček", "Pití"},
             tsPICK_UP),
 
-        new ScenarioStep("jdi koupelna",
-            "Přesunul(a) jste se do místnosti: Koupelna" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Brýle, Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník",
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Brýle", "Umyvadlo", "Časopis" },
-            new String[] { "Deštník" },
-            tsMOVE),
 
-        new ScenarioStep("jdi záchod",
-            "Do zadané místnosti se odsud nedá přejít: záchod" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Brýle, Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník",
+            new ScenarioStep( "zvedni Cigarety",
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Brýle", "Umyvadlo", "Časopis" },
-            new String[] { "Deštník" },
-            tsBAD_NEIGHBOR),
+             "Máte plné ruce a předmět nemůžete vzít."  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček, Pití",
 
-        new ScenarioStep("vezmi koupelna",
-            "Zadaný předmět v místnosti není: Koupelna" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Brýle, Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník",
-
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Brýle", "Umyvadlo", "Časopis" },
-            new String[] { "Deštník" },
-            tsBAD_OBJECT),
-
-        new ScenarioStep("vezmi umyvadlo",
-            "Zadaný předmět nejde zvednout: Umyvadlo" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Brýle, Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník",
-
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Brýle", "Umyvadlo", "Časopis" },
-            new String[] { "Deštník" },
-            tsUNMOVABLE),
-
-        new ScenarioStep("polož papír",
-            "Předmět není v batohu: Papír" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Brýle, Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník",
-
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Brýle", "Umyvadlo", "Časopis" },
-            new String[] { "Deštník" },
-            tsNOT_IN_BAG),
-
-        new ScenarioStep("vezmi brýle",
-            "Vzal(a) jste předmět: Brýle" +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník, Brýle",
-
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Umyvadlo", "Časopis" },
-            new String[] { "Deštník", "Brýle" },
-            tsPICK_UP),
-
-        new ScenarioStep("vezmi Časopis",
-            "Zadaný předmět nemůžete vzít, máte už obě ruce plné." +
-        "\n\nNacházíte se v místnosti: Koupelna" +
-          "\nMůžete se přesunout do místností: Předsíň" +
-          "\nV místnosti se nachází: Umyvadlo, Časopis" +
-          "\nMáte v držení předměty: Deštník, Brýle",
-
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Umyvadlo", "Časopis" },
-            new String[] { "Deštník", "Brýle" },
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Cigarety", "Pastička"},
+            new String[] {"Sáček","Pití"},
             tsBAG_FULL),
 
-        new ScenarioStep("?",
+
+            new ScenarioStep("?",
             "\nPříkazy, které je možno v průběhu hry zadat:" +
             "\n============================================",
             //Text pokračuje vyjmenováním příkazů a jejich popisů
             //a končí standardním popisem aktuální situace
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Umyvadlo", "Časopis" },
-            new String[] { "Deštník", "Brýle" },
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Cigarety", "Pastička"},
+            new String[] {"Sáček", "Pití"},
             tsHELP),
 
-        new ScenarioStep("konec",
-            "Konec hry. \nDěkujeme, že jste zkusil(a) naši hru.",
 
-            "Koupelna",
-            new String[] { "Předsíň" },
-            new String[] { "Umyvadlo", "Časopis" },
-            new String[] { "Deštník", "Brýle" },
-            tsEND),
+
+            new ScenarioStep( "polož",
+
+             "Nezadali jste objekt, který chcete položit"  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček, Pití",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Cigarety", "Pastička"},
+            new String[] {"Sáček","Pití"},
+            tsPUT_DOWN_WA),
+
+
+
+
+             new ScenarioStep( "zvedni",
+
+             "Nezadali jste objekt, který chcete zvednout"  +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
+            "\nV rukách máte: Sáček, Pití",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Cigarety", "Pastička"},
+            new String[] {"Sáček","Pití"},
+           tsPICK_UP_WA),
+
+
+
+
+         new ScenarioStep( "jdi Pavilon_krokodýlů",
+            "Na krokodýly je moc velká zima, proto celý pavilon spí a vy můžete bezpečně projít"+
+            "\nNacházíte se v prostoru: Pavilon_krokodýlů"+
+            "\nMůžete přejít do prostoru: Občerstvení, Pavilon_hlodavců, Start"+
+            "\nV prostoru se nachází:" +
+            "\nV rukách máte: Pastička",
+
+            "Pavilon_krokodýlů",
+            new String[] { "Občerstvení", "Pavilon_hlodavců", "Start" },
+            new String[] {},
+            new String[] {"Sáček", "Pití"},
+            tsMOVE ),
+
+      new ScenarioStep( "jdi Terária_s_hady",
+            "Přesunul(a) jste se do Terária s hady"+
+            "\nNacházíte se v prostoru: Terária_s_hady"+
+            "\nMůžete přejít do prostoru: Sloni, Pavilon_hlodavců"+
+            "\nV prostoru se nachází: Had, Voda" +
+            "\nV rukách máte: Sáček, Pití",
+
+            "Terária_s_hady",
+            new String[] { "Sloni", "Pavilon_hlodavců" },
+            new String[] {"Had", "Voda"},
+            new String[] {"Sáček", "Pití"},
+            tsMOVE ),
+
+     new ScenarioStep( "zvedni Had",
+            "Tento objekt nelze zvednou"+
+            "\nNacházíte se v prostoru: Terária_s_hady"+
+            "\nMůžete přejít do prostoru: Sloni, Pavilon_hlodavců"+
+            "\nV prostoru se nachází: Had, Voda" +
+            "\nV rukách máte: Sáček, Pití",
+
+
+             "Terária_s_hady",
+            new String[] { "Sloni", "Pavilon_hlodavců" },
+            new String[] {"Had", "Voda"},
+            new String[] {"Sáček", "Pití"},
+
+            tsUNMOVABLE ),
+
+
+
+
+   new ScenarioStep( "jdi",
+             "Nezadali jste prostor, do kterého se chcete přesunout"+
+            "\nNacházíte se v prostoru: Terária_s_hady"+
+            "\nMůžete přejít do prostoru: Sloni, Pavilon_hlodavců"+
+            "\nV prostoru se nachází: Had, Voda" +
+            "\nV rukách máte: Sáček, Pití",
+
+
+             "Terária_s_hady",
+            new String[] { "Sloni", "Pavilon_hlodavců" },
+            new String[] {"Had", "Voda"},
+            new String[] {"Sáček", "Pití"},
+            tsMOVE_WA)   ,
+
+
+     new ScenarioStep( "konec",
+
+            " Děkuji, že jste si zahrál(a)"+
+            "\nmoji hru.",
+
+            "Terária_s_hady",
+            new String[] { "Sloni", "Pavilon_hlodavců" },
+            new String[] {"Had", "Voda"},
+            new String[] {"Sáček", "Pití"},
+            tsEND )
+
+//        UKONČENÍ
     };
 
 
     /** Jediná instance této třídy. Spravuje všechny scénáře sdružené hry. */
     private static final ScenarioManager MANAGER =
-                                         new ScenarioManager();
+                                          new ScenarioManager();
 
 
 
@@ -610,7 +637,7 @@ public class ScenarioManager extends AScenarioManager
     /***************************************************************************
      * Vytvoří instanci představující správce scénářů hry.
      */
-    public ScenarioManager()
+    private ScenarioManager()
     {
         super(AUTHOR, XNAME, CLASS);
 
@@ -685,7 +712,6 @@ public class ScenarioManager extends AScenarioManager
      */
     public static void testMyGame()
     {
-//        IGame     hra  = GameRUP.getInstance();
         IGame     hra  = MANAGER.getGame();
         _Test_101 test = _Test_101.getInstance(hra);
         test.testGame();
@@ -693,10 +719,9 @@ public class ScenarioManager extends AScenarioManager
 
 
     /** @param args Parametry příkazového řádku - nepoužívané. */
-    public static void main(String[] args)
+    public static void main( String[] args )
     {
-//        testMyScenarioManager();
-//        simulateBasicScenarios();
-        testMyGame();
+        testMyScenarioManager();
+        simulateBasicScenarios();
     }
 }

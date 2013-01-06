@@ -94,10 +94,23 @@ public abstract class ACommand implements ICommand
         ACommand command = NAME_2_COMMAND.get(words[0]);
         if (command == null) {
             return "Tento příkaz neznám." +
-                 "\nChcete-li poradit, zadejte příkaz ?";
+                 "\nChcete-li poradit, zadejte příkaz ?" + status();
         }
         String answer = command.execute(words);
         return answer;
+    }
+
+    static String status()
+    {
+      String prostor = "Nacházíte se v prostoru: " + Place.getCurrentPlace();
+      String sousedi = "Můžete přejít do prostoru: " +
+                       výpisČárkyMísta(Place.getCurrentPlace().getNeighbors());
+      String veci    = "V prostoru se nachází: " +
+                       výpisČárkyObjekty(Place.getCurrentPlace().getObjects());
+      String ruce    = "V rukách máte: " +
+                       výpisČárkyObjekty(Hands.getInstance().getObjects());
+      return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + ruce +
+             "\n" ;
     }
 
 
@@ -198,6 +211,34 @@ public abstract class ACommand implements ICommand
 
 
 //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
+
+        private static String výpisČárkyMísta(Collection<Place> místa){
+        boolean první = true;
+        String výstup = "";
+        for (Place place: místa){
+           if (první) {
+               první = false;
+           } else {
+               výstup += ",";
+           }
+           výstup += " " + place.getName();
+       }
+       return výstup;
+    }
+
+    private static String výpisČárkyObjekty(Collection<Something> věci){
+        boolean první = true;
+        String výstup = "";
+        for (Something věc: věci){
+           if (první) {
+               první = false;
+           } else {
+               výstup += ",";
+           }
+           výstup += " " + věc.getName();
+       }
+       return výstup;
+    }
 //== PRIVATE AND AUXILIARY INSTANCE METHODS ====================================
 //== EMBEDDED TYPES AND INNER CLASSES ==========================================
 //== TESTING CLASSES AND METHODS ===============================================

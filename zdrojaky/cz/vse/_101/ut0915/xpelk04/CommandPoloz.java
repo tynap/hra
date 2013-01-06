@@ -46,7 +46,7 @@ public class CommandPoloz extends ACommand
      {
        if (arguments.length < 2)
         {
-            return "Nezadali jste objekt, který chcete položit" ;
+            return "Nezadali jste objekt, který chcete položit" + status() ;
         }
      String somethingName = arguments[1];
      Hands HANDS = Hands.getInstance();
@@ -57,11 +57,11 @@ public class CommandPoloz extends ACommand
          {
                    currentPlace.add(something);
                    HANDS.remove(something);
-                   return "Položil(a) jste " + something.getName();
+                   return "Položil(a) jste " + something.getName() + status();
           }
       }
 
-     return "Zadaný předmět nemáte v rukách:" + somethingName;
+     return "Zadaný předmět nemáte v rukách:" + somethingName + status();
     }
 }
 

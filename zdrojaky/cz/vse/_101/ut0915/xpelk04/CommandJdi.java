@@ -59,7 +59,8 @@ public class CommandJdi extends ACommand
     public String execute(String... arguments)
     {
         if (arguments.length < 2) {
-            return "Nezadali jste prostor, do kterého se chcete přesunout";
+            return "Nezadali jste prostor, do kterého se chcete přesunout"
+                    + status();
         }
         String destName = arguments[1];
         Place currentRoom = Place.getCurrentPlace();
@@ -67,10 +68,11 @@ public class CommandJdi extends ACommand
             if (destName.equalsIgnoreCase(neighbor.getName())) {
                 Place.setCurrentPlace(neighbor);
                 return "Vkročil(a) jste do: "  +
-                       neighbor.getName();
+                       neighbor.getName() + status();
             }
         }
-        return  "Do zadaného prostoru odtud nemůžete přejít." + destName;
+        return  "Do zadaného prostoru odtud nemůžete přejít." + destName
+                + status();
     }
 
 
