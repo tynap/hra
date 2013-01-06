@@ -23,9 +23,9 @@ public class CommandNastraz extends ACommand
     //== OSTATNÍ NESOUKROMÉ METODY TŘÍDY =======================================
     //##########################################################################
     //== KONSTRUKTORY A TOVÁRNÍ METODY =========================================
-    /**
-     * *************************************************************************
-     *
+
+     /*************************************************************************
+     *Vytvoří příkaz nastražující pastičku.
      */
     public CommandNastraz()
     {
@@ -37,6 +37,13 @@ public class CommandNastraz extends ACommand
     //== ABSTRAKTNÍ METODY =====================================================
     //== PŘÍSTUPOVÉ METODY VLASTNOSTÍ INSTANCÍ =================================
     //== OSTATNÍ NESOUKROMÉ METODY INSTANCÍ ====================================
+
+    /*************************************************************************
+     * Instance třídy CommandNastraz představují příkazy realizující
+     * nastražení pastičky. Pokud je v místnosti myš a v rukou pastička,
+     * vyndá z rukou pastičku a vloží do nich myš a to samé i v místnosti.
+     */
+
     @Override
     public String execute(String... arguments)
     {

@@ -63,8 +63,10 @@ public class CommandJdi extends ACommand
                     + status();
         }
         String destName = arguments[1];
-        Place currentRoom = Place.getCurrentPlace();
-        for (Place neighbor : currentRoom.getNeighbors()) {
+        Place currentPlace = Place.getCurrentPlace();
+
+
+        for (Place neighbor : currentPlace.getNeighbors()) {
             if (destName.equalsIgnoreCase(neighbor.getName())) {
                 Place.setCurrentPlace(neighbor);
                 return "Vkročil(a) jste do: "  +

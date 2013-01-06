@@ -101,7 +101,7 @@ public abstract class ACommand implements ICommand
         return answer;
     }
 /*******************************************************************************
- * Konstantní výpis aktuálních prostorů, sousedů, věcí a obsahu rukou.
+ * Opakující se výpis aktuálních prostorů, sousedů, věcí a obsahu rukou.
  */
 
     static String status()
@@ -113,7 +113,10 @@ public abstract class ACommand implements ICommand
                        výpisČárkyObjekty(Place.getCurrentPlace().getObjects());
       String ruce    = "V rukách máte: " +
                        výpisČárkyObjekty(Hands.getInstance().getObjects());
-      return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + ruce +
+      String příkazy = "Můžete použít příkazy: Jdi, Konec, Nastraz, Poloz," +
+              " Vezmi";
+      return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + příkazy
+              +  "\n"  + ruce +
              "\n" ;
     }
 

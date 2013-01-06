@@ -274,7 +274,9 @@ public enum Place implements IPlace
 
 
 //== OTHER NON-PRIVATE INSTANCE METHODS ========================================
-
+/****************************************************************************
+ * Vyhledá danou věc v místnosti a pokud se shoduje, tak jí přiřadí.
+ */
     public Something chooseSomething(String choosedSomething)
      {
          Something result = null;

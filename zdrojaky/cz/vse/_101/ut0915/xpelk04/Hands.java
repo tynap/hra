@@ -99,7 +99,9 @@ public class Hands implements IBag
 
 //== OTHER NON-PRIVATE INSTANCE METHODS ========================================
 
-
+/***************************************************************************
+ * Vyhledá vybranou věc v "rukách" a pokud se shoduje, přiřadí ji.
+ */
     public Something chooseSomething(String choosedSomething)
      {
          Something result = null;
