@@ -309,11 +309,10 @@ public enum Place implements IPlace
             Something something;
             switch (prefix)
             {
-                case '#': something = Something.newHeavyThing(nameWithoutPrefix);
+                case '#': something = Something.newHeavySomething(nameWithoutPrefix);
                           break;
-                case '@': something = Something.newAlcoholicDrink(nameWithoutPrefix);
-                          break;
-                default:  something = Something.newOrdinaryThing(objectName);
+
+                default:  something = Something.newOrdinarySomething(objectName);
                           break;
             }
             objects.add(something);

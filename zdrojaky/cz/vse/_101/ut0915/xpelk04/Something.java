@@ -33,10 +33,6 @@ public class Something implements IObject
      *  musí být větší než kapacita batohu. */
     private final int weight;
 
-    /** Informace o tom, je-li objekt alkoholický nápoj, aby se lednička
-     *  mohla rozhodnout, zda bude prověřovat plnoletost žadatele. */
-    private final boolean alcoholic;
-
 
 
 //== VARIABLE INSTANCE ATTRIBUTES ==============================================
@@ -52,9 +48,9 @@ public class Something implements IObject
      * @param name   Název vytvářeného objektu
      * @return Vrátí požadovaný objekt
      */
-    public static Something newOrdinaryThing(String name)
+    public static Something newOrdinarySomething(String name)
     {
-        return new Something(name, 1, false);
+        return new Something(name, 1 );
     }
 
 
@@ -64,22 +60,13 @@ public class Something implements IObject
      * @param name   Název vytvářeného objektu
      * @return Vrátí požadovaný objekt
      */
-    public static Something newHeavyThing(String name)
+    public static Something newHeavySomething(String name)
     {
-        return new Something(name, Integer.MAX_VALUE, false);
+        return new Something(name, Integer.MAX_VALUE);
     }
 
 
-    /***************************************************************************
-     * Vytvoří nový objekt se zadaným názvem představující alkoholický nápoj.
-     *
-     * @param name   Název vytvářeného objektu
-     * @return Vrátí požadovaný objekt
-     */
-    public static Something newAlcoholicDrink(String name)
-    {
-        return new Something(name, 1, true);
-    }
+
 
 
     /***************************************************************************
@@ -90,51 +77,14 @@ public class Something implements IObject
      */
     public Something(String name, int weight)
     {
-        this(name, weight, false);
+        this.name   = name;
+        this.weight = weight;
     }
-
-
-    /***************************************************************************
-     * Vytvoří nový objekt se zadaným názvem a alkoholičností.
-     *
-     * @param name      Název vytvářeného objektu
-     * @param alcoholic Příznak alkoholičnosti objektu - jedná-li se o
-     *                  alkoholický nápoj {@code true}, jinak {@code false}
-     */
-    public Something(String name, boolean alcoholic)
-    {
-        this(name, 1, true);
-    }
-
-
-    /***************************************************************************
-     * Vytvoří nový objekt se zadaným názvem a vahou.
-     *
-     * @param name   Název vytvářeného objektu
-     * @param weight Váha vytvářeného objektu
-     */
-    public Something(String name, int weight, boolean alcoholic)
-    {
-        this.name      = name;
-        this.weight    = weight;
-        this.alcoholic = alcoholic;
-    }
-
 
 
 //== ABSTRACT METHODS ==========================================================
 //== INSTANCE GETTERS AND SETTERS ==============================================
 
-    /***************************************************************************
-     * Vrátí informaci o tom, představuje-li daný objekt alkoholický nápoj.
-     *
-     * @return Jedná-li se o alkoholický nápoj, vrátí {@code true},
-     *         jinak vrátí {@code false}
-     */
-    public boolean isAlcoholic()
-    {
-        return alcoholic;
-    }
 
 
     /***************************************************************************

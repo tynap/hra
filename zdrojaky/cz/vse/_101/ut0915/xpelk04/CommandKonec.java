@@ -59,7 +59,7 @@ public class CommandKonec extends ACommand
     public String execute(String... arguments)
     {
         Game.getInstance().stop();
-        return " Děkuji, že jste si zahrál(a)"+ "\nmoji hru.";
+        return " Děkuji, že jste si zahrál(a) moji hru.";
     }
 
 
