@@ -3,8 +3,6 @@
  */
 package cz.vse._101.ut0915.xpelk04;
 
-import cz.vse._101.po0000.xpecr999_literals_io.*;
-
 
 
 
@@ -66,11 +64,84 @@ public class CommandJdi extends ACommand
         Place currentPlace = Place.getCurrentPlace();
 
 
+
         for (Place neighbor : currentPlace.getNeighbors()) {
-            if (destName.equalsIgnoreCase(neighbor.getName())) {
-                Place.setCurrentPlace(neighbor);
-                return "Vkročil(a) jste do: "  +
-                       neighbor.getName() + status();
+
+
+            if (destName.equalsIgnoreCase(neighbor.getName()))
+            {
+
+                if (destName.equals("voliéra"))
+                         { Game.getInstance().stop();
+
+                             return "Vstoupil(a) jste do voliéry, " +
+                                     "ve které " +
+                                    "\nse vznášejí hladový kondoři, orli, " +
+                                    " havrani a spoustu dalších " +
+                                     "ptáků. V momentě," +
+                                    " kdy vás zaregistrují," +
+                                     " se za vámi zavřou " +
+                                    "dveře. \nPtákům konečně přišla svačinka. " +
+                                    "Uklovali vás k smrti a hra pro " +
+                                     "vás, bohužel, končí.";
+                         }
+
+                if (destName.equals("terária_s_hady"))
+                          {Place.setCurrentPlace(neighbor);
+                          return  "Vkročil(a) jste do" +
+                            " Terária s hady, kteří po vás mlsně koukají." +
+                            "\nNa výměnu za jídlo pro vás mají" +
+                            " vědro s vodou." +
+                             " Nakrmte je nebo raději zmizte."+ status();
+                         }
+
+                 if (destName.equals("sloni"))
+                        {Place.setCurrentPlace(neighbor);
+                         return  "Vkročil(a) jste do výběhu pro slony, " +
+                         "kteří rozzuřeně" +
+                         " pobíhají dokola. Nepotřebují" +
+                           "\ntrochu schladit studenou sprchou? " +
+                         "Být vámi, tak pospíším," +
+                         " ať nedopadnete jako ušlapaný" +
+                        "\nošetřovatel ležící v rohu, ke " +
+                         "kterému vás výměnou za vodu pustí." + status();
+                        }
+
+                 if (destName.equals("exit"))
+                       {Place.setCurrentPlace(neighbor);
+                            return  "Úspěšně jste došli až k východu." +
+                             " Ten je ale bohužel již " +
+                             "zamčený, protože jste se na začátku" +
+                            "\nzdržel na toaletách po " +
+                             "požití prošlé klobásy ze stánku " +
+                             "vedle, a zbytek zoo je již dávno"+
+                            "\nevakuovaný.Jedinou " +
+                             "možností otevření dveří je " +
+                            "ošetřovatelova karta, " +
+                             "kterou položíte na čtečku." + status();
+
+                          }
+
+                  if (destName.equals("pavilon_krokodýlů"))
+                      {Place.setCurrentPlace(neighbor);
+                      return "Na krokodýly je moc velká zima," +
+                             " proto celý pavilon spí a" +
+                             " vy můžete bezpečně projít"+ status();
+                       }
+
+                  if (destName.equals("pavilon_hlodavců"))
+                      {Place.setCurrentPlace(neighbor);
+                      return  "Vkročil(a) jste do Pavilonu " +
+                              "hlodavců kde se prohánějí skupinky " +
+                               "od hrabošů přes veverky" +
+                                "\n po bobry."+ status();
+
+                       }
+
+                  else{Place.setCurrentPlace(neighbor);
+
+              return "Vkročil(a) jste do: "  +
+                   neighbor.getName() + status(); }
             }
         }
         return  "Do zadaného prostoru odtud nemůžete přejít." + destName
