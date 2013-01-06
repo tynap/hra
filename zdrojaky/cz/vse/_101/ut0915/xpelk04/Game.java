@@ -179,7 +179,7 @@ public class Game implements IGame
     @Override
     public Collection<Place> getAllPlaces()
     {
-        return Place.getAllRooms();
+        return Place.getAllPlaces();
     }
 
 
@@ -192,7 +192,7 @@ public class Game implements IGame
     @Override
     public Place getCurrentPlace()
     {
-        return Place.getCurrentRoom();
+        return Place.getCurrentPlace();
     }
 
 

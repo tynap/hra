@@ -63,10 +63,10 @@ public class CommandJdi extends ACommand
             return "Nebylo zadáno, kam se přesunout";
         }
         String destName = arguments[1];
-        Place currentRoom = Place.getCurrentRoom();
+        Place currentRoom = Place.getCurrentPlace();
         for (Place neighbor : currentRoom.getNeighbors()) {
             if (destName.equalsIgnoreCase(neighbor.getName())) {
-                Place.setCurrentRoom(neighbor);
+                Place.setCurrentPlace(neighbor);
                 return "Přesunul(a) jste se do místnosti: " +
                        neighbor.getName();
             }

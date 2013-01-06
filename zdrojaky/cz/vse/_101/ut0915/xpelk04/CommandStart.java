@@ -65,7 +65,7 @@ public class CommandStart extends ACommand
         }
         //Inicializuje příkazy, prostory i batoh
         ACommand.initializeCommands();
-        Place    .initializeRooms();
+        Place    .initializePlaces();
         Hands.getInstance().initialize();
         Game.getInstance().setAlive(true);
         return "Vítáme vás ve služebním bytě. Jistě máte hlad." +

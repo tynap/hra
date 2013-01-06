@@ -65,8 +65,8 @@ public class CommandVezmi extends ACommand
             return "Nebylo zadáno co mám vzít";
         }
         String thingName = arguments[1];
-        Place currentRoom = Place.getCurrentRoom();
-        for (Thing thing : currentRoom.getObjects()) {
+        Place currentRoom = Place.getCurrentPlace();
+        for (Something thing : currentRoom.getObjects()) {
             if (thingName.equalsIgnoreCase(thing.getName())) {
                 if (thing.getWeight() > 1) {
                     return "Zadaný předmět nejde zvednout: " + thing.getName();

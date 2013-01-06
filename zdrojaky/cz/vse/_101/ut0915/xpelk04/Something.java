@@ -19,7 +19,7 @@ import cz.vse.adv_framework.game_txt.IObject;
  * @author  Kristýna PELEŠKOVÁ
  * @version 0.00.0000 — 20yy-mm-dd
  */
-public class Thing implements IObject
+public class Something implements IObject
 {
 //== CONSTANT CLASS ATTRIBUTES =================================================
 //== VARIABLE CLASS ATTRIBUTES =================================================
@@ -52,9 +52,9 @@ public class Thing implements IObject
      * @param name   Název vytvářeného objektu
      * @return Vrátí požadovaný objekt
      */
-    public static Thing newOrdinaryThing(String name)
+    public static Something newOrdinaryThing(String name)
     {
-        return new Thing(name, 1, false);
+        return new Something(name, 1, false);
     }
 
 
@@ -64,9 +64,9 @@ public class Thing implements IObject
      * @param name   Název vytvářeného objektu
      * @return Vrátí požadovaný objekt
      */
-    public static Thing newHeavyThing(String name)
+    public static Something newHeavyThing(String name)
     {
-        return new Thing(name, Integer.MAX_VALUE, false);
+        return new Something(name, Integer.MAX_VALUE, false);
     }
 
 
@@ -76,9 +76,9 @@ public class Thing implements IObject
      * @param name   Název vytvářeného objektu
      * @return Vrátí požadovaný objekt
      */
-    public static Thing newAlcoholicDrink(String name)
+    public static Something newAlcoholicDrink(String name)
     {
-        return new Thing(name, 1, true);
+        return new Something(name, 1, true);
     }
 
 
@@ -88,7 +88,7 @@ public class Thing implements IObject
      * @param name   Název vytvářeného objektu
      * @param weight Váha vytvářeného objektu
      */
-    public Thing(String name, int weight)
+    public Something(String name, int weight)
     {
         this(name, weight, false);
     }
@@ -101,7 +101,7 @@ public class Thing implements IObject
      * @param alcoholic Příznak alkoholičnosti objektu - jedná-li se o
      *                  alkoholický nápoj {@code true}, jinak {@code false}
      */
-    public Thing(String name, boolean alcoholic)
+    public Something(String name, boolean alcoholic)
     {
         this(name, 1, true);
     }
@@ -113,7 +113,7 @@ public class Thing implements IObject
      * @param name   Název vytvářeného objektu
      * @param weight Váha vytvářeného objektu
      */
-    public Thing(String name, int weight, boolean alcoholic)
+    public Something(String name, int weight, boolean alcoholic)
     {
         this.name      = name;
         this.weight    = weight;

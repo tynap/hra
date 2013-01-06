@@ -35,7 +35,7 @@ public class Hands implements IBag
 //== CONSTANT INSTANCE ATTRIBUTES ==============================================
 
     /** Kolekce objektů nacházejících se právě v "batohu". */
-    private final Collection<Thing> objects = new ArrayList<>();
+    private final Collection<Something> objects = new ArrayList<>();
 
 
 
@@ -89,7 +89,7 @@ public class Hands implements IBag
      * @return Kolekce objektů v batohu
      */
     @Override
-    public Collection<Thing> getObjects()
+    public Collection<Something> getObjects()
     {
         return objects;
     }
@@ -106,7 +106,7 @@ public class Hands implements IBag
      * @return By-li objekt přidán, vrátí {@code true}, nebyl-li přidán
      *
      */
-    boolean add(Thing thing)
+    boolean add(Something thing)
     {
         if (objects.size() + thing.getWeight() > CAPACITY) {
             return false;

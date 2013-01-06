@@ -130,7 +130,7 @@ public enum Place implements IPlace
     private final String[] neighborNames;
 
     /** Aktuální objekty v prostoru. */
-    private final Collection<Thing> objects = new ArrayList<>();
+    private final Collection<Something> objects = new ArrayList<>();
 
     /** Aktuální sousedé prostoru. */
     private final Collection<Place> neighbors = new ArrayList<>();
@@ -145,10 +145,10 @@ public enum Place implements IPlace
      * Inicializuje stav všech prostorů,
      * tj. uvede všechny prostoru do stavu požadovaného na počátku hry.
      */
-    public static void initializeRooms()
+    public static void initializePlaces()
     {
-        for (Place room : values()) {
-            room.initialize();
+        for (Place place : values()) {
+            place.initialize();
         }
         currentPlace = Start;
     }
@@ -159,7 +159,7 @@ public enum Place implements IPlace
      *
      * @return Kolekce odkazů na všechny prostory vystupující ve hře
      */
-    static Collection<Place> getAllRooms()
+    static Collection<Place> getAllPlaces()
     {
 //        //Verze rozepsaná do několika příkazů
 //        Room[] roomsArr = values();
@@ -177,7 +177,7 @@ public enum Place implements IPlace
      *
      * @return Místnost, v níž se hráč pravé nachází
      */
-    static Place getCurrentRoom()
+    static Place getCurrentPlace()
     {
         return currentPlace;
     }
@@ -188,11 +188,11 @@ public enum Place implements IPlace
      * Nic nekontroluje, věří žadateli,
      * protože metodu beztak vidí pouze třídy z daného balíčku.
      *
-     * @param room Nastavovaná aktuální místnost
+     * @param place Nastavovaná aktuální místnost
      */
-    static void setCurrentRoom(Place room)
+    static void setCurrentPlace(Place place)
     {
-        currentPlace = room;
+        currentPlace = place;
     }
 
 
@@ -265,7 +265,7 @@ public enum Place implements IPlace
      * @return Kolekce objektů nacházejících se v daném prostoru
      */
     @Override
-    public Collection<Thing> getObjects()
+    public Collection<Something> getObjects()
     {
         return objects;
     }
@@ -277,11 +277,11 @@ public enum Place implements IPlace
     /***************************************************************************
      * Odebere zadaný objekt z daného prostoru.
      *
-     * @param thing Odebíraný objekt
+     * @param something Odebíraný objekt
      */
-    void remove(Thing thing)
+    void remove(Something something)
     {
-        objects.remove(thing);
+        objects.remove(something);
     }
 
 
@@ -306,17 +306,17 @@ public enum Place implements IPlace
             //Začíná-li název znakem @, jedná se o alkoholický nápoj
             char prefix = objectName.charAt(0);
             String nameWithoutPrefix = objectName.substring(1);
-            Thing thing;
+            Something something;
             switch (prefix)
             {
-                case '#': thing = Thing.newHeavyThing(nameWithoutPrefix);
+                case '#': something = Something.newHeavyThing(nameWithoutPrefix);
                           break;
-                case '@': thing = Thing.newAlcoholicDrink(nameWithoutPrefix);
+                case '@': something = Something.newAlcoholicDrink(nameWithoutPrefix);
                           break;
-                default:  thing = Thing.newOrdinaryThing(objectName);
+                default:  something = Something.newOrdinaryThing(objectName);
                           break;
             }
-            objects.add(thing);
+            objects.add(something);
         }
     }
 
