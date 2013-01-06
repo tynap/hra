@@ -41,7 +41,7 @@ public class CommandNastraz extends ACommand
     public String execute(String... arguments)
     {
         if (arguments.length < 2) {
-            return "Nezadali jste objekt, který chcete nastražit";
+            return "Nezadali jste objekt, který chcete nastražit" + status();
         }
 
         String somethingName = arguments[1];
