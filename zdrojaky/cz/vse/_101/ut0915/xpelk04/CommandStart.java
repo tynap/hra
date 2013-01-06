@@ -3,8 +3,6 @@
  */
 package cz.vse._101.ut0915.xpelk04;
 
-import cz.vse._101.po0000.xpecr999_literals_io.*;
-
 
 
 
@@ -61,19 +59,24 @@ public class CommandStart extends ACommand
     {
         Game game = Game.getInstance();
         if (game.isAlive()) {
-            return "Zadal(a) jste prázdný příkaz.";
+            return "Zadal(a) jste prázdný příkaz." +
+                    "\nPro nápovědu zadejte příkaz ?";
         }
         //Inicializuje příkazy, prostory i batoh
         ACommand.initializeCommands();
         Place    .initializePlaces();
         Hands.getInstance().initialize();
         Game.getInstance().setAlive(true);
-        return "Vítáme vás ve služebním bytě. Jistě máte hlad." +
-             "\nNajděte v bytě ledničku - tam vás čeká svačina.";
+        return "Upozorňujeme návštěvníky naší zoologické zahrady, " +
+                "že skupinka ochránců přírody" +
+            "\nnarušila náš systém na správu klecí a otevřela všechny dveře, " +
+                "čímž došlo k úniku" +
+            "\nvšech zvířat do areálu ZOO. " +
+                "Žádáme vás o co nejrychlejší opuštění zahrady. Děkujeme."+
+            "\n\nPřed odchodem do ZOO jste slíbil, " +
+                "že přinesete jako dárek plyšáka, myslete na to během hry";
+
     }
-
-
-
 //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
 //== PRIVATE AND AUXILIARY INSTANCE METHODS ====================================
 //== EMBEDDED TYPES AND INNER CLASSES ==========================================
