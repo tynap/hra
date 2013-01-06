@@ -47,6 +47,7 @@ public abstract class ACommand implements ICommand
         new CommandVezmi();
         new CommandKonec();
         new CommandPoloz();
+        new CommandNastraz();
     }
 
 

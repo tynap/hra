@@ -141,6 +141,7 @@ public enum Place implements IPlace
 //== CLASS GETTERS AND SETTERS =================================================
 //== OTHER NON-PRIVATE CLASS METHODS ===========================================
 
+
     /***************************************************************************
      * Inicializuje stav všech prostorů,
      * tj. uvede všechny prostoru do stavu požadovaného na počátku hry.
@@ -273,6 +274,33 @@ public enum Place implements IPlace
 
 
 //== OTHER NON-PRIVATE INSTANCE METHODS ========================================
+
+    public Something chooseSomething(String choosedSomething)
+     {
+         Something result = null;
+         for (Something something : objects)
+
+         {
+             if(something.getName().toLowerCase().equals(
+                     choosedSomething.toLowerCase()))
+               {
+                   result = something;
+                 }
+
+         }
+
+         if (result != null)
+         {
+//             objects.remove(result);
+             return result;
+
+         }
+
+         else
+         {
+             return null;
+         }
+     }
 
     /***************************************************************************
      * Odebere zadaný objekt z daného prostoru.

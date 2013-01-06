@@ -32,6 +32,7 @@ public class Hands implements IBag
 
 //== VARIABLE CLASS ATTRIBUTES =================================================
 //== STATIC INITIALIZER (CLASS CONSTRUCTOR) ====================================
+
 //== CONSTANT INSTANCE ATTRIBUTES ==============================================
 
     /** Kolekce objektů nacházejících se právě v "batohu". */
@@ -97,6 +98,35 @@ public class Hands implements IBag
 
 
 //== OTHER NON-PRIVATE INSTANCE METHODS ========================================
+
+
+    public Something chooseSomething(String choosedSomething)
+     {
+         Something result = null;
+         for (Something something : objects)
+
+         {
+             if(something.getName().toLowerCase().equals(
+                     choosedSomething.toLowerCase()))
+               {
+                   result = something;
+                 }
+
+         }
+
+         if (result != null)
+         {
+//             objects.remove(result);
+             return result;
+
+         }
+
+         else
+         {
+             return null;
+         }
+     }
+
 
     /***************************************************************************
      * Pokusí se přidat zadaný objekt do batohu.
