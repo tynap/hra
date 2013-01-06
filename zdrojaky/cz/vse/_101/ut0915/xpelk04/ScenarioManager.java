@@ -93,7 +93,7 @@ public class ScenarioManager extends AScenarioManager
         START_STEP,
 
         new ScenarioStep( "jdi Občerstvení",
-            "Vkročil(a) jste do Občerstvení, které je již z části vyrabované." +
+            "Vkročil(a) jste do Občerstvení." +
 
             "\nNacházíte se v prostoru: Občerstvení"+
             "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Pavilon_Opic," +
@@ -272,7 +272,7 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep( "jdi Obchod_se_suvenýry ",
-            "Vkročil(a) jste do Obchod_se_suvenýry, který je již z větší části vyrabovaný." +
+            "Vkročil(a) jste do Obchod_se_suvenýry." +
 
             "\n\nNacházíte se v prostoru: Obchod_se_suvenýry "+
             "\nMůžete přejít do prostoru: Exit, Sloni" +
@@ -287,9 +287,12 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep( "jdi Exit ",
-            "Úspěšně jste došli až k východu. Ten je ale bohužel již zamčený, protože jste se na začátku" +
-            "\nzdržel na toaletách po požití prošlé klobásy ze stánku vedle, a zbytek zoo je již dávno"+
-            "\nevakuovaný.Jedinou možností otevření dveří je ošetřovatelova karta, kterou položíte na čtečku."+
+            "Úspěšně jste došli až k východu. Ten je ale bohužel již " +
+            "zamčený, protože jste se na začátku" +
+            "\nzdržel na toaletách po požití prošlé klobásy ze stánku " +
+            "vedle, a zbytek zoo je již dávno"+
+            "\nevakuovaný.Jedinou možností otevření dveří je " +
+            "ošetřovatelova karta, kterou položíte na čtečku."+
 
             "\n\nNacházíte se v prostoru: Exit "+
             "\nMůžete přejít do prostoru: Obchod se suvenýry" +
