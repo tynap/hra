@@ -99,6 +99,9 @@ public abstract class ACommand implements ICommand
         String answer = command.execute(words);
         return answer;
     }
+/*******************************************************************************
+ * Konstantní výpis aktuálních prostorů, sousedů, věcí a obsahu rukou.
+ */
 
     static String status()
     {

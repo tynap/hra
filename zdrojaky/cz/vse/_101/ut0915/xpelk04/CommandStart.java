@@ -73,9 +73,7 @@ public class CommandStart extends ACommand
                 "čímž došlo k úniku" +
             "\nvšech zvířat do areálu ZOO. " +
                 "Žádáme vás o co nejrychlejší opuštění zahrady. Děkujeme."+
-            "\n\nPřed odchodem do ZOO jste slíbil, " +
-                "že přinesete jako dárek plyšáka, myslete na to během hry" +
-               status();
+                  status();
 
     }
 //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
