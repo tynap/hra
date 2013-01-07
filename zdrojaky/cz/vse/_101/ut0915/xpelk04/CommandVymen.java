@@ -98,7 +98,7 @@ public class CommandVymen extends ACommand
         HANDS.add(voda);
         return
 
-                 "Nakrmila jste hady a odměnou je vám vědro s vodou."
+                 "Nakrmil(a) jste hady a odměnou je vám vědro s vodou."
                  + status();
      }
 

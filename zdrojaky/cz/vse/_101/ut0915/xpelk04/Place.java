@@ -43,7 +43,7 @@ public enum Place implements IPlace
 //
     Start("Vstupní prostor, v němž začíná hra",
             new String[] {"Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
-            "#Banán", "Sáček", "Šátek")
+            "#Banán_vysoko_na_stromě", "Sáček", "Šátek")
     ,
     Občerstvení("Pomocný prostor, kde můžete získat potřebné předměty",
             new String[] {  "Pavilon_krokodýlů", "Start", "Pavilon_opic"  },
