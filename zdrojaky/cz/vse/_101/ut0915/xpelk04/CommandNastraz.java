@@ -79,8 +79,8 @@ public class CommandNastraz extends ACommand
          {
             currentPlace.add(pastička);
             currentPlace.remove(myš);
-            HANDS.add(myš);
             HANDS.remove(pastička);
+            HANDS.add(myš);
             return "Nastražil(a) jste pastičku a chytil(a) myš"  + status();
         }
 

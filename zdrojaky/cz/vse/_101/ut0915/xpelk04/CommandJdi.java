@@ -77,9 +77,9 @@ public class CommandJdi extends ACommand
 
                              return "Vstoupil(a) jste do voliéry, " +
                                      "ve které " +
-                                    "\nse vznášejí hladový kondoři, orli, " +
+                                    "se vznášejí hladový kondoři, orli, " +
                                     " havrani a spoustu dalších " +
-                                     "ptáků. V momentě," +
+                                     "ptáků. \nV momentě," +
                                     " kdy vás zaregistrují," +
                                      " se za vámi zavřou " +
                                     "dveře. \nPtákům konečně přišla " +

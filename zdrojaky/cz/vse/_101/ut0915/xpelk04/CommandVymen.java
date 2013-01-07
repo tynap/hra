@@ -94,9 +94,8 @@ public class CommandVymen extends ACommand
     {
         currentPlace.add(myš);
         currentPlace.remove(voda);
-        HANDS.add(voda);
         HANDS.remove(myš);
-
+        HANDS.add(voda);
         return
 
                  "Nakrmila jste hady a odměnou je vám vědro s vodou."
