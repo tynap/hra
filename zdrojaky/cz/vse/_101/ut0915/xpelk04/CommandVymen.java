@@ -22,14 +22,7 @@ public class CommandVymen extends ACommand
 //== VARIABLE INSTANCE ATTRIBUTES ==============================================
 //== CLASS GETTERS AND SETTERS =================================================
 //== OTHER NON-PRIVATE CLASS METHODS ===========================================
-
-//##############################################################################
-//== CONSTUCTORS AND FACTORY METHODS ===========================================
-
-    /***************************************************************************
-     *
-     */
-    public CommandVymen()
+ public CommandVymen()
     {
             super("vymen",
             "vymění 1. zadanou věc za 2. zadanou věc v místnosti");
@@ -45,9 +38,10 @@ public class CommandVymen extends ACommand
 //== EMBEDDED TYPES AND INNER CLASSES ==========================================
 //== TESTING CLASSES AND METHODS ===============================================
 //
-//    /*************************************************************************
-//     * Testing method.
-//     */
+    /*************************************************************************
+
+     * Testing method.
+     */
 //    public static void test()
 //    {
 //        CommandVymen inst = new CommandVymen();
@@ -55,7 +49,10 @@ public class CommandVymen extends ACommand
 //    /** @param args Command line arguments - not used. */
 //    public static void main(String[] args)  {  test();  }
 
-
+/****************************************************************************
+ *Instance třídy CommandVymen představují příkazy realizující vyměnění věci
+ * z vašich rukou za věc z místnosti.
+ */
     @Override
     public String execute(String... arguments)
     {
@@ -178,3 +175,10 @@ public class CommandVymen extends ACommand
 
 
 }
+//##############################################################################
+//== CONSTUCTORS AND FACTORY METHODS ===========================================
+
+    /***************************************************************************
+     *
+     */
+
