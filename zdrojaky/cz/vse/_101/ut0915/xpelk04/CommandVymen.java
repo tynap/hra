@@ -24,8 +24,8 @@ public class CommandVymen extends ACommand
 //== OTHER NON-PRIVATE CLASS METHODS ===========================================
  public CommandVymen()
     {
-            super("vymen",
-            "vymění 1. zadanou věc za 2. zadanou věc v místnosti");
+            super("vyměň",
+            "vymění 1. zadanou věc za 2. zadanou věc z místnosti");
     }
 
 

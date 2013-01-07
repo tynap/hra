@@ -162,13 +162,13 @@ public enum Place implements IPlace
      */
     static Collection<Place> getAllPlaces()
     {
-//        //Verze rozepsaná do několika příkazů
-//        Room[] roomsArr = values();
-//        Collection<Room> roomList = Arrays.asList(roomsArr);
-//        return roomList;
+        //Verze rozepsaná do několika příkazů
+        Place[] PlacesArr = values();
+        Collection<Place> placeList = Arrays.asList(PlacesArr);
+        return placeList;
 
         //Verze dělající totéž, avšak zapsaná v jediném příkazu
-        return Arrays.asList(values());
+//        return Arrays.asList(values());
     }
 
 

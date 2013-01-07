@@ -29,8 +29,9 @@ public class CommandNastraz extends ACommand
      */
     public CommandNastraz()
     {
-        super("nastraz",
-              "Pokud je v místnosti myš, chytí ji a přidá ji do vašich rukou");
+        super("nastraž",
+              "Pokud je v místnosti myš a vy máte co nastražit," +
+                " chytí ji a přidá ji do vašich rukou");
     }
 
 

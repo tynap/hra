@@ -50,6 +50,7 @@ public abstract class ACommand implements ICommand
         new CommandNastraz();
         new CommandVymen();
         new CommandPouzij();
+        new CommandNapoveda();
     }
 
 

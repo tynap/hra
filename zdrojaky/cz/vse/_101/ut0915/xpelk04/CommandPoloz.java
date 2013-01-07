@@ -31,7 +31,7 @@ public class CommandPoloz extends ACommand
      */
     public CommandPoloz()
     {
-        super("Poloz", "Příkaz, který položí do místnosti věc z vašich rukou");
+        super("Polož", "Příkaz, který položí do místnosti věc z vašich rukou");
     }
 
 

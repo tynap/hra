@@ -29,7 +29,7 @@ public class CommandPouzij extends ACommand
      */
     public CommandPouzij()
     {
-        super("pouzij", "Příkaz, který použije vámi vybranou věc a něco " +
+        super("použij", "Příkaz, který použije vámi vybranou věc a něco " +
                 "vám za ní dá/něco se vám otevře atd..");
 
     }

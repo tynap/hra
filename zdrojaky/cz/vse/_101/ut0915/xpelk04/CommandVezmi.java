@@ -40,7 +40,8 @@ public class CommandVezmi extends ACommand
      */
     public CommandVezmi()
     {
-        super("Vezmi", "Příkaz, který sebere věc.");
+        super("Vezmi", "Příkaz, který sebere věc, pokud není moc těžká" +
+                "nebo nesebratelná.");
     }
 
 
