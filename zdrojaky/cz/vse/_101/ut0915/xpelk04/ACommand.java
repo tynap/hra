@@ -121,7 +121,8 @@ public abstract class ACommand implements ICommand
                          "                                           "+
                          "Vyměň, Použij, Nápověda, Vezmi" ;
 
-      return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + příkazy
+      return "\n\nPro nápovědu stiskněte \"?\"\n"  + prostor +
+             "\n"  + sousedi + "\n" + veci + "\n" + příkazy
               +  "\n"  + ruce +"\n" ;
     }
 
