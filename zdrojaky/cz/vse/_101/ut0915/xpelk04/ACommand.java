@@ -117,9 +117,9 @@ public abstract class ACommand implements ICommand
       String ruce    = "V rukách máte: " +
                        výpisČárkyObjekty(Hands.getInstance().getObjects());
       String příkazy = "Můžete použít příkazy: Jdi, Konec," +
-                         " Nastraz, Poloz,  \n" +
+                         " Nastraž, Polož,  \n" +
                          "                                           "+
-                         "Vymen, Pouzij, Napoveda, Vezmi" ;
+                         "Vyměň, Použij, Nápověda, Vezmi" ;
 
       return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + příkazy
               +  "\n"  + ruce +"\n" ;
