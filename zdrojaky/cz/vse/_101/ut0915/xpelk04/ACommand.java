@@ -49,6 +49,7 @@ public abstract class ACommand implements ICommand
         new CommandPoloz();
         new CommandNastraz();
         new CommandVymen();
+        new CommandPouzij();
     }
 
 
@@ -115,7 +116,7 @@ public abstract class ACommand implements ICommand
       String ruce    = "V rukách máte: " +
                        výpisČárkyObjekty(Hands.getInstance().getObjects());
       String příkazy = "Můžete použít příkazy: Jdi, Konec, Nastraz, Poloz," +
-              " Vezmi";
+              " Vymen" + "Pouzij"  + " Vezmi";
       return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + příkazy
               +  "\n"  + ruce +
              "\n" ;

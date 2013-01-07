@@ -36,7 +36,8 @@ public class CommandJdi extends ACommand
      */
     public CommandJdi()
     {
-        super("Jdi", "Přesune vás z aktuálního prostoru do zadaného sousedního.");
+        super("Jdi", "Přesune vás z aktuálního prostoru do zadaného " +
+                "sousedního.");
     }
 
 
@@ -81,7 +82,8 @@ public class CommandJdi extends ACommand
                                      "ptáků. V momentě," +
                                     " kdy vás zaregistrují," +
                                      " se za vámi zavřou " +
-                                    "dveře. \nPtákům konečně přišla svačinka. " +
+                                    "dveře. \nPtákům konečně přišla " +
+                                     "svačinka. " +
                                     "Uklovali vás k smrti a hra pro " +
                                      "vás, bohužel, končí.";
                          }

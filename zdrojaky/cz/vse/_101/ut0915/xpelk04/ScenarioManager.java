@@ -306,8 +306,13 @@ public class ScenarioManager extends AScenarioManager
             tsMOVE ),
 
 
-            new ScenarioStep( "polož Ošetřovatelova_karta",
-            "Úspěšně jste otevřeli dveře ze ZOO a vy jste ve zdraví opustil ZOO.",
+            new ScenarioStep( "použij Ošetřovatelova_karta",
+            "\"Cvak\", slyšíte odedveří, které se pomalu otevírají a vy " +
+            "bezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a venku" +
+            "na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
+            "zahrál(a) moji hru."
+
+            ,
 
             "Exit",
             new String[] { "Obchod_se_suvenýry" },
