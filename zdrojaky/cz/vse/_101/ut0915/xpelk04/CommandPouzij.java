@@ -31,6 +31,7 @@ public class CommandPouzij extends ACommand
     {
         super("pouzij", "Příkaz, který použije vámi vybranou věc a něco " +
                 "vám za ní dá/něco se vám otevře atd..");
+
     }
 
 
@@ -54,44 +55,43 @@ public class CommandPouzij extends ACommand
       boolean jeVoda    = false;
       boolean jeKarta   = false;
 
-        if (!somethingName.toLowerCase().equals("voda") ||
-            !somethingName.toLowerCase().equals("ošetřovatelova_karta"))
-                {
-                    return  "Tento předmět nemůžete použít." +  status();
-                }
+        if (somethingName.toLowerCase().equals("voda") ||
+            somethingName.toLowerCase().equals("ošetřovatelova_karta")) {
 
+            Something voda = HANDS.chooseSomething("Voda");
+            if (somethingName != null) {
+                jeVoda = true;
+            }
 
-        Something voda = HANDS.chooseSomething("Voda");
-        if (somethingName != null) {
-            jeVoda = true;
+            Something karta = HANDS.chooseSomething("Ošetřovatelova_karta");
+            if (somethingName != null) {
+                jeKarta = true;
+            }
+
+            if (jeVoda && currentPlace.getName().equals("Sloni")) {
+                currentPlace.add(Something.newOrdinarySomething(
+                        "Ošetřovatelova_karta"));
+                HANDS.remove(voda);
+                return status();
+
+            }
+
+            if (jeKarta && currentPlace.getName().equals("Exit")) {
+                Game.getInstance().stop();
+                return
+                "\"Cvak\", slyšíte odedveří, které se pomalu otevírají a vy " +
+                "bezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a venku" +
+                "na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
+                "zahrál(a) moji hru.";
+            }
+        }
+        else {
+            return "Tento předmět nemůžete použít." + status();
         }
 
-        Something karta = HANDS.chooseSomething("Ošetřovatelova_karta");
-        if (somethingName != null) {
-            jeKarta = true;
-        }
 
-
-        if (jeVoda && currentPlace.getName().equals("Sloni"))
-        {
-            currentPlace.add(Something.newOrdinarySomething(
-                    "Ošetřovatelova karta"));
-            HANDS.remove(voda);
-
-        }
-
-
-
-        if (jeKarta && currentPlace.getName().equals("Exit"))
-        { Game.getInstance().stop();
-            return
-            "\"Cvak\", slyšíte odedveří, které se pomalu otevírají a vy " +
-            "bezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a venku" +
-            "na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
-            "zahrál(a) moji hru." ;
-        }
- return "";
- }
+        return "";
+    }
 
     //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
 //== PRIVATE AND AUXILIARY INSTANCE METHODS ====================================

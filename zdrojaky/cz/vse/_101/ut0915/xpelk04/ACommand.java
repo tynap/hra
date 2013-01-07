@@ -115,11 +115,11 @@ public abstract class ACommand implements ICommand
                        výpisČárkyObjekty(Place.getCurrentPlace().getObjects());
       String ruce    = "V rukách máte: " +
                        výpisČárkyObjekty(Hands.getInstance().getObjects());
-      String příkazy = "Můžete použít příkazy: Jdi, Konec, Nastraz, Poloz," +
-              " Vymen" + "Pouzij"  + " Vezmi";
+      String příkazy = "Můžete použít příkazy: Jdi, Konec, Nastraz, Poloz, " +
+              "Vymen, Pouzij, Napoveda, Vezmi" ;
+
       return "\n\n" + prostor + "\n"  + sousedi + "\n" + veci + "\n" + příkazy
-              +  "\n"  + ruce +
-             "\n" ;
+              +  "\n"  + ruce +"\n" ;
     }
 
 
