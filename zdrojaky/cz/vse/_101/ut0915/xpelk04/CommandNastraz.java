@@ -54,11 +54,19 @@ public class CommandNastraz extends ACommand
         String somethingName = arguments[1];
         Hands HANDS = Hands.getInstance();
         Place currentPlace = Place.getCurrentPlace();
-        boolean jeMyš = false;
+
+        boolean jeMyš      = false;
         boolean jePastička = false;
 
-        Something pastička = HANDS.chooseSomething("Pastička");
-        if (pastička != null) {
+        if (!somethingName.toLowerCase().equals("pastička"))
+                {
+                    return  "Nemůžete přece nastražit "
+                            + somethingName + " jako" +
+                            " pastičku..." +  status();
+                }
+
+        Something pastička = HANDS.chooseSomething("pastička");
+        if (somethingName != null) {
             jePastička = true;
         }
 

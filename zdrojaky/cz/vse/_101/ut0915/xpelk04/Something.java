@@ -112,10 +112,11 @@ public class Something implements IObject
         return weight;
     }
 
-
-
 //== OTHER NON-PRIVATE INSTANCE METHODS ========================================
-//== PRIVATE AND AUXILIARY CLASS METHODS =======================================
+
+
+
+    //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
 //== PRIVATE AND AUXILIARY INSTANCE METHODS ====================================
 //== EMBEDDED TYPES AND INNER CLASSES ==========================================
 //== TESTING CLASSES AND METHODS ===============================================
