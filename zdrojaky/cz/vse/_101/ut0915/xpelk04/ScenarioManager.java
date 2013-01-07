@@ -236,7 +236,8 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep( "použij Voda",
-            "Osvěžil(a) jste slony a ty se v klidu přesunuly pryč. Nyní můžete prohledat kapsy"+
+            "Osvěžil(a) jste slony a ty se v klidu přesunuly pryč. " +
+            "Nyní můžete prohledat kapsy"+
             "\nmrtvému ošetřovateli v rohu."+
 
 

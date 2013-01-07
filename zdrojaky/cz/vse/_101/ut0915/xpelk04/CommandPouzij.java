@@ -68,11 +68,16 @@ public class CommandPouzij extends ACommand
                 jeKarta = true;
             }
 
-            if (jeVoda && currentPlace.getName().equals("Sloni")) {
+            if (jeVoda && currentPlace.getName().equals("Sloni"))
+            {
                 currentPlace.add(Something.newOrdinarySomething(
                         "Ošetřovatelova_karta"));
                 HANDS.remove(voda);
-                return status();
+
+                return
+            "Osvěžil(a) jste slony a ty se v klidu přesunuly pryč. " +
+            "Nyní můžete prohledat kapsy"+
+            "\nmrtvému ošetřovateli v rohu."  + status();
 
             }
 
@@ -80,8 +85,9 @@ public class CommandPouzij extends ACommand
                 Game.getInstance().stop();
                 return
                 "\"Cvak\", slyšíte odedveří, které se pomalu otevírají a vy " +
-                "bezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a venku" +
-                "na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
+                "\nbezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a " +
+                        "venku" +
+                "\n na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
                 "zahrál(a) moji hru.";
             }
         }
