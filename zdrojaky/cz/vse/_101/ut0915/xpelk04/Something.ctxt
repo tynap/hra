@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=name
+comment0.target=Something\ newOrdinarySomething(java.lang.String)
+comment0.text=\r\n\ Vytvo\u0159\u00ED\ nov\u00FD\ oby\u010Dejn\u00FD\ objekt\ se\ zadan\u00FDm\ n\u00E1zvem.\r\n\r\n\ @param\ name\ \ \ N\u00E1zev\ vytv\u00E1\u0159en\u00E9ho\ objektu\r\n\ @return\ Vr\u00E1t\u00ED\ po\u017Eadovan\u00FD\ objekt\r\n
+comment1.params=name
+comment1.target=Something\ newHeavySomething(java.lang.String)
+comment1.text=\r\n\ Vytvo\u0159\u00ED\ nov\u00FD\ t\u011B\u017Ek\u00FD,\ nezvednuteln\u00FD\ objekt\ se\ zadan\u00FDm\ n\u00E1zvem.\r\n\r\n\ @param\ name\ \ \ N\u00E1zev\ vytv\u00E1\u0159en\u00E9ho\ objektu\r\n\ @return\ Vr\u00E1t\u00ED\ po\u017Eadovan\u00FD\ objekt\r\n
+comment2.params=name\ weight
+comment2.target=Something(java.lang.String,\ int)
+comment2.text=\r\n\ Vytvo\u0159\u00ED\ nov\u00FD\ objekt\ se\ zadan\u00FDm\ n\u00E1zvem\ a\ vahou.\r\n\r\n\ @param\ name\ \ \ N\u00E1zev\ vytv\u00E1\u0159en\u00E9ho\ objektu\r\n\ @param\ weight\ V\u00E1ha\ vytv\u00E1\u0159en\u00E9ho\ objektu\r\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment3.text=\r\n\ Vr\u00E1t\u00ED\ n\u00E1zev\ dan\u00E9\ instance.\r\n\r\n\ @return\ N\u00E1zev\ instance\r\n
+comment4.params=
+comment4.target=int\ getWeight()
+comment4.text=\r\n\ Vr\u00E1t\u00ED\ v\u00E1hu\ objektu,\ resp.\ charakteristiku\ j\u00ED\ odpov\u00EDdaj\u00EDc\u00ED.\r\n\ Objekty,\ kter\u00E9\ nen\u00ED\ mo\u017Eno\ zvednout,\ vrac\u00ED\ -1.\r\n\r\n\ @return\ V\u00E1ha\ objektu\ nebo\ hodnota\ -1\ charakterizuj\u00EDc\u00ED,\r\n\ \ \ \ \ \ \ \ \ \u017Ee\ dan\u00FD\ objekt\ nen\u00ED\ mo\u017Eno\ zvednou\ a\ um\u00EDstit\ do\ batohu.\r\n
+numComments=5

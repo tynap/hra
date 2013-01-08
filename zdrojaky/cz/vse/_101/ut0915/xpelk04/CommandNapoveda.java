@@ -92,7 +92,15 @@ public class CommandNapoveda extends ACommand
 
 
 
-        return  "Místnosti: \n" + Startjm + ": " + Start +
+        return  "Cílem hry je dostat se ze ZOO, kterou můžete opustit jen" +
+                "z místnosti Exit. \n Musíte projít přes různé prostory, " +
+                " ve kterých se po vás bude požadovat " +
+                "nějaká věc, \n díky které získáte jiné věci, " +
+                "které vám pomůžou" +
+                " až k získání klíče pro otevření východu v místnosti" +
+                " Exit. \n V některé místnosti vám může hrozit i smrt a" +
+                " konec hry.\n\n" +
+                "Místnosti: \n" + Startjm + ": " + Start +
                 "\n" + Občerstveníjm + ": " + Občerstvení + "\n"
                      + Opicejm + ": " + Opice
                 + "\n" + konejm + ": " + kone

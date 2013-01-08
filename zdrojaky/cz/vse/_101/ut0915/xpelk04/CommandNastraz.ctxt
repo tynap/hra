@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandNastraz()
+comment0.text=\r\nVytvo\u0159\u00ED\ p\u0159\u00EDkaz\ nastra\u017Euj\u00EDc\u00ED\ pasti\u010Dku.\r\n
+comment1.params=arguments
+comment1.target=java.lang.String\ execute(java.lang.String[])
+comment1.text=\r\n\ Instance\ t\u0159\u00EDdy\ CommandNastraz\ p\u0159edstavuj\u00ED\ p\u0159\u00EDkazy\ realizuj\u00EDc\u00ED\r\n\ nastra\u017Een\u00ED\ pasti\u010Dky.\ Pokud\ je\ v\ m\u00EDstnosti\ my\u0161\ a\ v\ rukou\ pasti\u010Dka,\r\n\ vynd\u00E1\ z\ rukou\ pasti\u010Dku\ a\ vlo\u017E\u00ED\ do\ nich\ my\u0161\ a\ to\ sam\u00E9\ i\ v\ m\u00EDstnosti.\r\n
+numComments=2

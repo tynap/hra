@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandVymen()
+comment1.params=arguments
+comment1.target=java.lang.String\ execute(java.lang.String[])
+comment1.text=\r\nInstance\ t\u0159\u00EDdy\ CommandVymen\ p\u0159edstavuj\u00ED\ p\u0159\u00EDkazy\ realizuj\u00EDc\u00ED\ vym\u011Bn\u011Bn\u00ED\ v\u011Bci\r\n\ z\ va\u0161ich\ rukou\ za\ v\u011Bc\ z\ m\u00EDstnosti.\r\n
+numComments=2

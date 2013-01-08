@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandKonec()
+comment0.text=\r\n\r\n
+comment1.params=arguments
+comment1.target=java.lang.String\ execute(java.lang.String[])
+comment1.text=\r\n\ Metoda\ realizuj\u00EDc\u00ED\ reakci\ hry\ na\ zad\u00E1n\u00ED\ dan\u00E9ho\ p\u0159\u00EDkazu.\r\n\ Po\u010Det\ parametr\u016F\ je\ z\u00E1visl\u00FD\ na\ konkr\u00E9tn\u00EDm\ p\u0159\u00EDkazu,\r\n\ nap\u0159.\ p\u0159\u00EDkazy\ <i>konec</i>\ a\ <i>n\u00E1pov\u011Bda</i>\ nemaj\u00ED\ parametry,\r\n\ p\u0159\u00EDkazy\ <i>jdi</i>\ a\ <i>seber</i>\ maj\u00ED\ jeden\ parametr\r\n\ p\u0159\u00EDkaz\ <i>pou\u017Eij</i>\ mu\u017Ee\ m\u00EDt\ dva\ parametry\ atd.\r\n\r\n\ @param\ arguments\ Parametry\ p\u0159\u00EDkazu;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jejich\ po\u010Det\ mu\u017Ee\ byt\ pro\ ka\u017Ed\u00FD\ p\u0159\u00EDkaz\ jin\u00FD\r\n\ @return\ Text\ zpr\u00E1vy\ vypsan\u00E9\ po\ provedeni\ p\u0159\u00EDkazu\r\n
+numComments=2

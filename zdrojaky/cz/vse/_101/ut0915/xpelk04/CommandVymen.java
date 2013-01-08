@@ -135,8 +135,8 @@ public class CommandVymen extends ACommand
     {
         currentPlace.add(isFromHands1);
         currentPlace.remove(isFromPlace1);
-        HANDS.add(isFromPlace1);
         HANDS.remove(isFromHands1);
+        HANDS.add(isFromPlace1);
 
         return
 

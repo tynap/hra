@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandVezmi()
+comment0.text=\r\n\r\n
+comment1.params=arguments
+comment1.target=java.lang.String\ execute(java.lang.String[])
+comment1.text=\r\n\ Metoda\ realizuj\u00EDc\u00ED\ reakci\ hry\ na\ zad\u00E1n\u00ED\ p\u0159\u00EDkazu\r\n\ pro\ standardn\u00ED\ p\u0159esun\ objektu\ z\ prostoru\ do\ batohu.\r\n\ V\ parametru\ by\ m\u011Bly\ b\u00FDt\ dv\u011B\ polo\u017Eky\:\ n\u00E1zev\ p\u0159\u00EDkazu\r\n\ a\ n\u00E1zev\ p\u0159esouvan\u00E9ho\ objektu.\r\n\r\n\ @param\ arguments\ Parametry\ p\u0159\u00EDkazu\ -\ n\u00E1zev\ p\u0159\u00EDkazu\ a\ p\u0159esouvan\u00E9ho\ objektu\r\n\ @return\ Text\ zpr\u00E1vy\ vypsan\u00E9\ po\ provedeni\ p\u0159\u00EDkazu\r\n
+numComments=2

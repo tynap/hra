@@ -72,7 +72,8 @@ public class CommandStart extends ACommand
             "\nnarušila náš systém na správu klecí a otevřela všechny dveře, " +
                 "čímž došlo k úniku" +
             "\nvšech zvířat do areálu ZOO. " +
-                "Žádáme vás o co nejrychlejší opuštění zahrady. Děkujeme."+
+                "Žádáme vás o co nejrychlejší opuštění zahrady. Děkujeme." +
+               "\n\n" +
                   status();
 
     }

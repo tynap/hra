@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ScenarioManager\ getInstance()
+comment0.text=\r\n\ Vr\u00E1t\u00ED\ spr\u00E1vce\ sc\u00E9n\u00E1\u0159\u016F\ -\ jedinou\ instanci\ t\u00E9to\ t\u0159\u00EDdy.\r\n\r\n\ @return\ Spr\u00E1vce\ sc\u00E9n\u00E1\u0159\u016F\r\n
+comment1.params=
+comment1.target=ScenarioManager()
+comment1.text=\r\n\ Vytvo\u0159\u00ED\ instanci\ p\u0159edstavuj\u00EDc\u00ED\ spr\u00E1vce\ sc\u00E9n\u00E1\u0159\u016F\ hry.\r\n
+comment2.params=
+comment2.target=void\ testMyScenarioManager()
+comment2.text=\r\n\ Z\u00E1kladn\u00ED\ test\ ov\u011B\u0159uj\u00EDc\u00ED,\r\n\ jestli\ spr\u00E1vce\ sc\u00E9n\u00E1\u0159\u016F\ vyhovuje\ zadan\u00FDm\ okrajov\u00FDm\ podm\u00EDnk\u00E1m,\ tj.\ jestli\:\r\n\ <ul>\r\n\ \ \ <li>Um\u00ED\ vr\u00E1tit\ spr\u00E1vn\u011B\ naform\u00E1tovan\u00E9\ jm\u00E9no\ autora/autorky\ hry\r\n\ \ \ \ \ \ \ a\ jeho/jej\u00ED\ xname.</li>\r\n\ \ \ <li>Definuje\ z\u00E1kladn\u00ED\ \u00FAsp\u011B\u0161n\u00FD\ a\ z\u00E1kladn\u00ED\ chybov\u00FD\ sc\u00E9n\u00E1\u0159.</li>\r\n\ \ \ <li>Z\u00E1kladn\u00ED\ chybov\u00FD\ sc\u00E9n\u00E1\u0159\ m\u00E1\ n\u00E1sleduj\u00EDc\u00ED\ vlastnosti\:\r\n\ \ \ \ \ <ul>\r\n\ \ \ \ \ \ \ <li>Startovn\u00ED\ p\u0159\u00EDkaz,\ jeho\u017E\ n\u00E1zev\ je\ pr\u00E1zdn\u00FD\ \u0159et\u011Bzec</li>\r\n\ \ \ \ \ \ \ <li>Minim\u00E1ln\u00ED\ po\u017Eadovan\u00FD\ po\u010Det\ krok\u016F</li>\r\n\ \ \ \ \ \ \ <li>Minim\u00E1ln\u00ED\ po\u010Det\ nav\u0161t\u00EDven\u00FDch\ m\u00EDstnost\u00ED</li>\r\n\ \ \ \ \ \ \ <li>Minim\u00E1ln\u00ED\ po\u010Det\ "zahl\u00E9dnut\u00FDch"\ m\u00EDstnost\u00ED</li>\r\n\ \ \ \ \ \ \ <li>Pou\u017Eit\u00ED\ p\u0159\u00EDkaz\u016F\ pro\ p\u0159echod\ z\ prostoru\ do\ prostoru\r\n\ \ \ \ \ \ \ \ \ zvednut\u00ED\ n\u011Bjak\u00E9ho\ objektu\ a\ polo\u017Een\u00ED\ n\u011Bjak\u00E9ho\ objektu</li>\r\n\ \ \ \ \ </ul>\r\n\ \ \ </li>\r\n\ \ \ <li>Z\u00E1kladn\u00ED\ chybov\u00FD\ sc\u00E9n\u00E1\u0159\ m\u00E1\ n\u00E1sleduj\u00EDc\u00ED\ vlastnosti\:\r\n\ \ \ \ \ <ul>\r\n\ \ \ \ \ \ \ <li>Startovn\u00ED\ p\u0159\u00EDkaz,\ jeho\u017E\ n\u00E1zev\ je\ pr\u00E1zdn\u00FD\ \u0159et\u011Bzec</li>\r\n\ \ \ \ \ \ \ <li>Pou\u017Eit\u00ED\ v\u0161ech\ povinn\u00FDch\ chybov\u00FDch\ typ\u016F\ kroku\r\n\ \ \ \ \ \ \ \ \ definovan\u00FDch\ ve\ t\u0159\u00EDd\u011B\r\n\ \ \ \ \ \ \ \ \ {@link\ cz.vse.adv_framework.scenario.TypeOfStep}</li>\r\n\ \ \ \ \ \ \ <li>Vyvol\u00E1n\u00ED\ n\u00E1pov\u011Bdy</li>\r\n\ \ \ \ \ \ \ <li>Ukon\u010Den\u00ED\ p\u0159\u00EDkazem\ pro\ nestandardn\u00ED\ ukon\u010Den\u00ED\ hry</li>\r\n\ \ \ \ \ </ul>\r\n\ \ \ </li>\r\n\ </ul>\r\n
+comment3.params=
+comment3.target=void\ simulateBasicScenarios()
+comment3.text=\r\n\ Simuluje\ hran\u00ED\ hry\ podle\ z\u00E1kladn\u00EDho\ \u00FAsp\u011B\u0161n\u00E9ho\r\n\ a\ z\u00E1kladn\u00EDho\ chybov\u00E9ho\ sc\u00E9n\u00E1\u0159e.\r\n
+comment4.params=
+comment4.target=void\ testMyGame()
+comment4.text=\r\n\ Testov\u00E1n\u00ED\ funkce\ hry\ prov\u00E1d\u011Bn\u00E9\ postupn\u011B\r\n\ prost\u0159ednictv\u00EDm\ v\u0161ech\ sc\u00E9n\u00E1\u0159\u016F\ dan\u00E9ho\ spr\u00E1vce\r\n
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+comment5.text=@param\ args\ Parametry\ p\u0159\u00EDkazov\u00E9ho\ \u0159\u00E1dku\ -\ nepou\u017E\u00EDvan\u00E9.
+numComments=6

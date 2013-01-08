@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandJdi()
+comment0.text=\r\n\ Vytvo\u0159\u00ED\ p\u0159\u00EDkaz\ p\u0159esouvaj\u00EDc\u00ED\ hr\u00E1\u010De\ z\ aktu\u00E1ln\u00EDho\ prostoru\r\n\ do\ prostoru\ zadan\u00E9ho,\ p\u0159i\u010Dem\u017E\ zadan\u00FD\ prostor\ mus\u00ED\ b\u00FDt\r\n\ v\ danou\ chv\u00EDli\ sousedem\ prostoru\ aktu\u00E1ln\u00EDho.\r\n
+comment1.params=arguments
+comment1.target=java.lang.String\ execute(java.lang.String[])
+comment1.text=\r\n\ Metoda\ realizuj\u00EDc\u00ED\ standardn\u00ED\ p\u0159esun\ do\ sousedn\u00EDho\ prostoru.\r\n\ V\ parametru\ by\ m\u011Bly\ b\u00FDt\ dv\u011B\ polo\u017Eky\:\ n\u00E1zev\ p\u0159\u00EDkazu\r\n\ a\ n\u00E1zev\ c\u00EDlov\u00E9ho\ prostoru.\r\n\r\n\ @param\ arguments\ Parametry\ p\u0159\u00EDkazu\ -\ n\u00E1zev\ p\u0159\u00EDkazu\ a\ c\u00EDlov\u00E9ho\ prostoru\r\n\ @return\ Text\ zpr\u00E1vy\ vypsan\u00E9\ po\ provedeni\ p\u0159\u00EDkazu\r\n
+numComments=2

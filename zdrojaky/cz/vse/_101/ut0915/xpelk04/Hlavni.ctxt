@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ Metoda\ startuj\u00EDc\u00ED\ aplikaci\ je\ podle\ parametr\u016F\ p\u0159\u00EDkazov\u00E9ho\ \u0159\u00E1dku\r\n\ schopna\ spustit\ aplikaci\ v\ jednom\ ze\ t\u0159\u00ED\ re\u017Eim\u016F\:\r\n\ \ <ul>\r\n\ \ \ \ <li>Nejsou-li\ zad\u00E1ny\ parametry\ nebo\ je-i\ zad\u00E1n\ parametr\ {@code\ -win},\r\n\ \ \ \ \ \ spust\u00ED\ se\ hra\ v\ okenn\u00EDm\ re\u017Eimu\ komunikuj\u00EDc\u00EDm\ prost\u0159ednictv\u00EDm\r\n\ \ \ \ \ \ jednoduch\u00FDch\ dialogov\u00FDch\ oken.\r\n\ \ \ \ \ \ <br>&nbsp;</li>\r\n\ \ \ \ <li>Parametr\ {@code\ -cmd}\ spou\u0161t\u00ED\ hru\ v\ re\u017Eimu\ komunikuj\u00EDc\u00EDm\r\n\ \ \ \ \ \ s\ u\u017Eivatelem\ prost\u0159ednictv\u00EDm\ standardn\u00EDho\ vstupu\ a\ v\u00FDstupu\ &ndash;\r\n\ \ \ \ \ \ typicky\ prost\u0159ednictv\u00EDm\ konzoly.\r\n\ \ \ \ \ \ <br>&nbsp;</li>\r\n\ \ \ \ <li>Parametr\ {@code\ -file}\ spou\u0161t\u00ED\ hru\ v\ re\u017Eimu\r\n\ \ \ \ \ \ zapisuj\u00EDc\u00EDm\ zpr\u00E1vy\ u\u017Eivateli\ na\ standardn\u00ED\ v\u00FDstup\ a\r\n\ \ \ \ \ \ \u010Dtouc\u00EDm\ vstupn\u00ED\ p\u0159\u00EDkazy\ za\ zadan\u00E9ho\ souboru,\r\n\ \ \ \ \ \ kter\u00FD\ mus\u00ED\ b\u00FDt\ zad\u00E1n\ za\ t\u00EDmto\ parametrem;\r\n\ \ \ \ \ \ p\u0159esn\u011Bji\ za\ n\u00E1sleduj\u00EDc\u00ED\ mezerou.\r\n\ \ \ \ \ \ Cesta\ k\ souboru\ m\u016F\u017Ee\ b\u00FDt\ zad\u00E1na\ absolutn\u011B\ i\ relativn\u011B.\r\n\ \ \ \ \ \ <br>&nbsp;</li>\r\n\ </ul>\r\n\r\n\r\n\ @param\ args\ Parametry\ p\u0159\u00EDkazov\u00E9ho\ \u0159\u00E1dku\r\n
+comment1.params=
+comment1.target=void\ winIO()
+comment1.text=\r\n\ Komunikuje\ s\ u\u017Eivatelem\ prost\u0159ednictv\u00EDm\ jednoduch\u00FDch\ dialogov\u00FDch\ oken\r\n\ poskytovan\u00FDch\ t\u0159\u00EDdou\ {@link\ JOptionPane}.\r\n
+comment2.params=
+comment2.target=void\ stdIO()
+comment2.text=\r\n\ Komunikuje\ s\ u\u017Eivatelem\ prost\u0159ednictv\u00EDm\ standardn\u00EDho\ vstupu\ a\ v\u00FDstupu.\r\n
+comment3.params=args
+comment3.target=void\ fileInStdOut(java.lang.String[])
+comment3.text=\r\n\ O\u010Dek\u00E1v\u00E1\ za\ sv\u00FDm\ spou\u0161t\u011Bc\u00EDm\ parametrem\ cestu\ k\ souboru\r\n\ se\ zadan\u00FDmi\ vstupn\u00EDmi\ p\u0159\u00EDkazy;\ sv\u00E9\ odpov\u011Bdi\ pos\u00EDl\u00E1\ na\ standardn\u00ED\ v\u00FDstup.\r\n\r\n\ @param\ args\ Parametry\ p\u0159\u00EDkazov\u00E9ho\ \u0159\u00E1dku\r\n
+comment4.params=args
+comment4.target=java.util.Scanner\ createScanner(java.lang.String[])
+comment4.text=\r\n\ Vytvo\u0159\u00ED\ scanner\ \u010Dtouc\u00ED\ p\u0159\u00EDkazy\ ze\ souboru\ zadan\u00E9ho\ v\ p\u0159\u00EDkazov\u00E9m\ \u0159\u00E1dku.\r\n\r\n\ @param\ args\ Parametry\ p\u0159\u00EDkazov\u00E9ho\ \u0159\u00E1dku\r\n\ @return\ Po\u017Eadovan\u00FD\ scanner\r\n
+comment5.params=scanner
+comment5.target=void\ useScanner(java.util.Scanner)
+comment5.text=\r\n\ Spust\u00ED\ komunikaci\ s\ u\u017Eivatelem,\ kter\u00E1\ bude\r\n\ \u010D\u00EDst\ p\u0159\u00EDkazy\ u\u017Eivatele\ prost\u0159ednictv\u00EDm\ zadan\u00E9ho\ scanneru\r\n\ a\ pos\u00EDlat\ odpov\u011Bdi\ hry\ na\ standardn\u00ED\ v\u00FDstup.\r\n\r\n\ @param\ scanner\ Scanner\ zprost\u0159edkuj\u00EDc\u00ED\ vstup\r\n
+comment6.params=
+comment6.target=Hlavni()
+comment6.text=Soukrom\u00FD\ konstruktor\ br\u00E1n\u00EDc\u00ED\ vytvo\u0159en\u00ED\ dal\u0161\u00EDch\ instanc\u00ED.
+numComments=7
