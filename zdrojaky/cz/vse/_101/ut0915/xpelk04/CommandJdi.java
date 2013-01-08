@@ -73,7 +73,10 @@ public class CommandJdi extends ACommand
             {
 
                 if (destName.equals("voliéra"))
-                         { Game.getInstance().stop();
+                     {  
+
+
+                 Game.getInstance().stop();
 
                              return "Vstoupil(a) jste do voliéry, " +
                                      "ve které " +
@@ -120,7 +123,7 @@ public class CommandJdi extends ACommand
                             "\nevakuovaný.Jedinou " +
                              "možností otevření dveří je " +
                             "ošetřovatelova karta, " +
-                             "kterou položíte na čtečku." + status();
+                             "kterou vložíte do čtečky." + status();
 
                           }
 
@@ -128,17 +131,34 @@ public class CommandJdi extends ACommand
                       {Place.setCurrentPlace(neighbor);
                       return "Na krokodýly je moc velká zima," +
                              " proto celý pavilon spí a" +
-                             " vy můžete bezpečně projít"+ status();
+                             " vy můžete bezpečně projít."+ status();
                        }
 
                   if (destName.equals("pavilon_hlodavců"))
                       {Place.setCurrentPlace(neighbor);
                       return  "Vkročil(a) jste do Pavilonu " +
                               "hlodavců kde se prohánějí skupinky " +
-                               "od hrabošů přes veverky" +
-                                "\n po bobry."+ status();
+                               "od hrabošů přes veverky po bobry." +
+                              " V dalších " +
+                              "pavilonech by se vám mohlo některé zvíře" +
+                              "odtud hodit jako krmivo."
+                                + status();
 
                        }
+
+                  if (destName.equals("občerstvení"))
+                        {Place.setCurrentPlace(neighbor);
+
+                             return "Vstoupil(a) jste do občerstvení." +
+                                    "Jednu z věcí \n budete potřebovat, pro" +
+                                     " získání jídla \n pro hladová " +
+                                     "zvířata v ZOO, aby vám" +
+                                     " umožnila dostat \n se odtud." +
+                                     " Proto pečlivě" +
+                                     " vybírejte, co si odtud vezmete."
+                                     + status();
+
+                         }
 
                   else{Place.setCurrentPlace(neighbor);
 
@@ -146,7 +166,7 @@ public class CommandJdi extends ACommand
                    neighbor.getName() + status(); }
             }
         }
-        return  "Do zadaného prostoru odtud nemůžete přejít." + destName
+        return  "Do zadaného prostoru odtud nemůžete přejít. " + destName
                 + status();
     }
 
