@@ -73,10 +73,8 @@ public class CommandJdi extends ACommand
             {
 
                 if (destName.equals("voliéra"))
-                     {  
-
-
-                 Game.getInstance().stop();
+                     {
+                           Place.setCurrentPlace(neighbor);
 
                              return "Vstoupil(a) jste do voliéry, " +
                                      "ve které " +
@@ -85,10 +83,13 @@ public class CommandJdi extends ACommand
                                      "ptáků. \nV momentě," +
                                     " kdy vás zaregistrují," +
                                      " se za vámi zavřou " +
-                                    "dveře. \nPtákům konečně přišla " +
-                                     "svačinka. " +
-                                    "Uklovali vás k smrti a hra pro " +
-                                     "vás, bohužel, končí.";
+                                    "dveře. \n" +
+                                     "Ptáci vám však dají ještě jednu šanci " +
+                                     "a položí vám otázku. \n Pokud " +
+                                     "odpovíte " +
+                                     "špatně, uklovou vás. \n\n" +
+                                     "Orel se ptá: \"Je pravda, že my, ptáci," +
+                                    "nemáme bránici?\"";
                          }
 
                 if (destName.equals("terária_s_hady"))

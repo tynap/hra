@@ -6,12 +6,12 @@ package cz.vse._101.ut0915.xpelk04;
 
 
 /*******************************************************************************
- * Instances of class {@code HelpCommandNe} represent ...
+ * Instances of class {@code HelpCommandAno} represent ...
  *
- * @author  Kristýna PELEŠKOVÁ
+ * @author  Rudolf PECINOVSKÝ
  * @version 0.00.0000 — 20yy-mm-dd
  */
-public class HelpCommandNe extends ACommand
+public class HelpCommandAno extends ACommand
 {
 //== CONSTANT CLASS ATTRIBUTES =================================================
 //== VARIABLE CLASS ATTRIBUTES =================================================
@@ -27,9 +27,9 @@ public class HelpCommandNe extends ACommand
     /***************************************************************************
      *
      */
-    public HelpCommandNe()
+    public HelpCommandAno()
     {
-        super("ne", " ");
+        super("ano", " ");
     }
 
 
@@ -38,8 +38,7 @@ public class HelpCommandNe extends ACommand
 //== INSTANCE GETTERS AND SETTERS ==============================================
 //== OTHER NON-PRIVATE INSTANCE METHODS ========================================
 
-@Override
-    public String execute(String... arguments)
+      public String execute(String... arguments)
     {
         if (arguments.length > 1)
         {
@@ -52,12 +51,9 @@ public class HelpCommandNe extends ACommand
 
       if(currentPlace.getName().toLowerCase().equals("voliéra"))
         {
-            Game.getInstance().stop();
-
-
-           return "Odpověděli jste špatně, ptáci se na vás" +
-                   " slétli \n a uklovali. Hra pro vás končí. " +
-                   "Děkuji, že jste si zahrál(a) moji hru." ;
+            return "Odpověděli jste správně a proto vás ptáci nechají" +
+                  " bezpečně odejít."
+                     + status();
 
         }
 
@@ -67,9 +63,7 @@ public class HelpCommandNe extends ACommand
     }
 
 
-
-
-//== PRIVATE AND AUXILIARY CLASS METHODS =======================================
+    //== PRIVATE AND AUXILIARY CLASS METHODS =======================================
 //== PRIVATE AND AUXILIARY INSTANCE METHODS ====================================
 //== EMBEDDED TYPES AND INNER CLASSES ==========================================
 //== TESTING CLASSES AND METHODS ===============================================
@@ -79,7 +73,7 @@ public class HelpCommandNe extends ACommand
 //     */
 //    public static void test()
 //    {
-//        HelpCommandNe inst = new HelpCommandNe();
+//        HelpCommandAno inst = new HelpCommandAno();
 //    }
 //    /** @param args Command line arguments - not used. */
 //    public static void main(String[] args)  {  test();  }
