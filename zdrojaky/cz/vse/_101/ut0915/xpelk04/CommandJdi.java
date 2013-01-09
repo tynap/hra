@@ -3,6 +3,10 @@
  */
 package cz.vse._101.ut0915.xpelk04;
 
+import java.util.jar.Attributes.Name;
+
+
+
 
 
 
@@ -170,6 +174,9 @@ public class CommandJdi extends ACommand
         return  "Do zadaného prostoru odtud nemůžete přejít. " + destName
                 + status();
     }
+
+
+   
 
 
 

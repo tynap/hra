@@ -189,10 +189,12 @@ public abstract class ACommand implements ICommand
      *
      * @return Název příkazu
      */
-    @Override
+
     public String getName()
     {
-        return name;
+         return name;
+
+
     }
 
 

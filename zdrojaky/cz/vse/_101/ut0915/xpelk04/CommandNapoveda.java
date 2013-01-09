@@ -3,6 +3,7 @@
  */
 package cz.vse._101.ut0915.xpelk04;
 
+import com.sun.crypto.provider.AESCipher;
 import java.util.Collection;
 import java.util.List;
 
@@ -87,9 +88,7 @@ public class CommandNapoveda extends ACommand
         String obchod      = Place.Obchod_se_suvenýry.getDescription();
         String exit        = Place.Exit.getDescription();
 
-
-
-
+        String jdijm       = super.getName();
 
 
         return  "Cílem hry je dostat se ze ZOO, kterou můžete opustit jen" +
@@ -110,7 +109,9 @@ public class CommandNapoveda extends ACommand
                 + "\n" + Slonijm + ": " + Sloni +
                 "\n" + Voliérajm + ": " + Voliéra
                 + "\n" + obchodjm + ": " + obchod +
-                "\n" + exitjm + ": " + exit;
+                "\n" + exitjm + ": " + exit
+
+                ;
 
     }
 }
