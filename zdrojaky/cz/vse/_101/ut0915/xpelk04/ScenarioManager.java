@@ -68,12 +68,12 @@ public class ScenarioManager extends AScenarioManager
             "\n\nNacházíte se v prostoru: Start" +
             "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Občerstvení," +
              " Pavilon_opic" +
-            "\nV prostoru se nachází: Banán, Sáček, Šátek"+
+            "\nV prostoru se nachází: Banán_vysoko_na_stromě, Sáček, Šátek"+
             "\nV rukách máte:",
 
             "Start",
             new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
-            new String[] { "Banán", "Sáček", "Šátek" },
+            new String[] { "Banán_vysoko_na_stromě", "Sáček", "Šátek" },
             new String[] {},
             tsSTART );
 
@@ -93,7 +93,14 @@ public class ScenarioManager extends AScenarioManager
         START_STEP,
 
         new ScenarioStep( "jdi Občerstvení",
-            "Vkročil(a) jste do Občerstvení." +
+           "Vstoupil(a) jste do občerstvení." +
+                                    "Jednu z věcí \n budete potřebovat, pro" +
+                                     " získání jídla \n pro hladová " +
+                                     "zvířata v ZOO, aby vám" +
+                                     " umožnila dostat \n se odtud." +
+                                     " Proto pečlivě" +
+                                     " vybírejte, co si odtud vezmete."
+                                     +
 
             "\nNacházíte se v prostoru: Občerstvení"+
             "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Pavilon_Opic," +
@@ -123,10 +130,39 @@ public class ScenarioManager extends AScenarioManager
             new String[] {"Pastička"},
             tsPICK_UP ),
 
+          new ScenarioStep( "zvedni Salám",
+
+            "Zvedl(a) jste salám" +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Start," +
+            " Pavilon_Opic" +
+            "\nV prostoru se nachází: Pití, Cigarety" +
+            "\nV rukách máte: Pastička, Salám ",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] {  "Pití", "Cigarety" },
+            new String[] {"Pastička", "Salám"},
+            tsPICK_UP ),
+
+          new ScenarioStep( "polož Salám",
+
+            "Položil(a) jste: salám" +
+            "\n\nNacházíte se v prostoru: Občerstvení" +
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Start," +
+            " Pavilon_Opic" +
+            "\nV prostoru se nachází: Salám, Pití, Cigarety" +
+            "\nV rukách máte: Pastička ",
+
+            "Občerstvení",
+            new String[] { "Pavilon_krokodýlů", "Start", "Pavilon_opic" },
+            new String[] { "Salám", "Pití", "Cigarety" },
+            new String[] {"Pastička"},
+            tsPUT_DOWN ),
 
         new ScenarioStep( "jdi Pavilon_krokodýlů",
             "Na krokodýly je moc velká zima, proto celý pavilon spí a" +
-            " vy můžete bezpečně projít"+
+            " vy můžete bezpečně projít."+
             "\nNacházíte se v prostoru: Pavilon_krokodýlů"+
             "\nMůžete přejít do prostoru: Občerstvení, Pavilon_hlodavců, Start"+
             "\nV prostoru se nachází:" +
@@ -142,7 +178,10 @@ public class ScenarioManager extends AScenarioManager
 
         new ScenarioStep( "jdi Pavilon_hlodavců",
             "Vkročil(a) jste do Pavilonu hlodavců kde se prohánějí skupinky " +
-            "od hrabošů přes veverky" +
+            "od hrabošů přes veverky po bobry." +
+            " V dalších " +
+                              "pavilonech by se vám mohlo některé zvíře " +
+                              "odtud hodit jako krmivo."+
             "\n po bobry."+
             "\n\nNacházíte se v prostoru: Pavilon_hlodavců "+
             "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Výběh_s_koňmi," +
@@ -158,8 +197,8 @@ public class ScenarioManager extends AScenarioManager
             tsMOVE ),
 
           new ScenarioStep("?",
-            "\nPříkazy, které je možno v průběhu hry zadat:" +
-            "\n============================================",
+            "Cílem hry je dostat se ze ZOO, kterou můžete opustit jen" +
+                "z místnosti Exit.",
             //Text pokračuje vyjmenováním příkazů a jejich popisů
             //a končí standardním popisem aktuální situace
 
@@ -177,7 +216,7 @@ public class ScenarioManager extends AScenarioManager
             "Pavilon_hlodavců",
             new String[] { "Pavilon_krokodýlů", "Výběh_s_koňmi",
                                                 "Terária_s_hady" },
-            new String[] { "Klec" },
+            new String[] { "Klec", "pastička"},
             new String[] {"Myš"},
             tsNON_STANDARD ),
 
@@ -199,12 +238,12 @@ public class ScenarioManager extends AScenarioManager
             tsMOVE ),
 
 
-            new ScenarioStep( "vyměň Myš",
-            "Nakrmila jste hady a odměnou je vám vědro s vodou." +
+            new ScenarioStep( "vyměň Myš Voda",
+            "Nakrmil(a) jste hady a odměnou je vám vědro s vodou." +
 
             "\n\nNacházíte se v prostoru: Terária_s_hady "+
             "\nMůžete přejít do prostoru: Pavilon_hlodavců, Sloni" +
-            "\nV prostoru se nachází: Had, Voda" +
+            "\nV prostoru se nachází: Had" +
             "\nV rukách máte: Voda",
 
             "Terária_s_hady",
@@ -242,7 +281,8 @@ public class ScenarioManager extends AScenarioManager
 
 
             "\n\nNacházíte se v prostoru: Sloni "+
-            "\nMůžete přejít do prostoru: Voliéra, Terária_s_Hady, Obchod se suvenýry" +
+            "\nMůžete přejít do prostoru: Voliéra, Terária_s_Hady, Obchod " +
+            "se suvenýry" +
             "\nV prostoru se nachází: Ošetřovatelova_karta, CD, Seno" +
             "\nV rukách máte:",
 
@@ -255,10 +295,11 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep( "zvedni Ošetřovatelova_karta ",
-            "Zvedl(a) jste Ošetřovatelovu_kartu" +
+            "Zvedl(a) jste Ošetřovatelova_karta" +
 
             "\n\nNacházíte se v prostoru: Sloni "+
-            "\nMůžete přejít do prostoru: Voliéra, Terária_s_hady, Obchod se suvenýry" +
+            "\nMůžete přejít do prostoru: Voliéra, Terária_s_hady, Obchod " +
+            "se suvenýry" +
             "\nV prostoru se nachází: Ošetřovatelova_karta, CD, Seno" +
             "\nV rukách máte:",
 
@@ -273,7 +314,7 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep( "jdi Obchod_se_suvenýry ",
-            "Vkročil(a) jste do Obchod_se_suvenýry." +
+            "Vkročil(a) jste do: Obchod_se_suvenýry." +
 
             "\n\nNacházíte se v prostoru: Obchod_se_suvenýry "+
             "\nMůžete přejít do prostoru: Exit, Sloni" +
@@ -288,12 +329,16 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep( "jdi Exit ",
-            "Úspěšně jste došli až k východu. Ten je ale bohužel již " +
-            "zamčený, protože jste se na začátku" +
-            "\nzdržel na toaletách po požití prošlé klobásy ze stánku " +
-            "vedle, a zbytek zoo je již dávno"+
-            "\nevakuovaný.Jedinou možností otevření dveří je " +
-            "ošetřovatelova karta, kterou položíte na čtečku."+
+            "Úspěšně jste došli až k východu." +
+                             " Ten je ale bohužel již " +
+                             "zamčený, protože jste se na začátku" +
+                            "\nzdržel na toaletách po " +
+                             "požití prošlé klobásy ze stánku " +
+                             "vedle, a zbytek zoo je již dávno"+
+                            "\nevakuovaný.Jedinou " +
+                             "možností otevření dveří je " +
+                            "ošetřovatelova karta, " +
+                             "kterou vložíte do čtečky." +
 
             "\n\nNacházíte se v prostoru: Exit "+
             "\nMůžete přejít do prostoru: Obchod se suvenýry" +
@@ -309,27 +354,28 @@ public class ScenarioManager extends AScenarioManager
 
             new ScenarioStep( "použij Ošetřovatelova_karta",
             "\"Cvak\", slyšíte odedveří, které se pomalu otevírají a vy " +
-            "bezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a venku" +
-            "na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
-            "zahrál(a) moji hru."
+                "\nbezpečně v plném zdraví vycházíte ze ZOO, spíše jungle a " +
+                        "venku" +
+                "\n na vás čekají davy novinářů. Děkuji, že jste si úspěšně " +
+                "zahrál(a) moji hru."
 
             ,
 
             "Exit",
             new String[] { "Obchod_se_suvenýry" },
-            new String[] {"Ošetřovatelova_karta"},
             new String[] {},
-            tsPUT_DOWN ),
+            new String[] {},
+            tsNON_STANDARD ),
 
 
 
             new ScenarioStep( "konec",
             " Děkuji, že jste si zahrál(a)"+
-            "\nmoji hru.",
+            " moji hru.",
 
             "Exit",
             new String[] { "Obchod_se_suvenýry" },
-            new String[] {"Ošetřovatelova_karta"},
+            new String[] {},
             new String[] {},
             tsEND),
 
@@ -357,13 +403,14 @@ public class ScenarioManager extends AScenarioManager
             "\nPro nápovědu zadejte příkaz ?" +
 
             "\n\nNacházíte se v prostoru: Start" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení, Pavilon opic" +
-            "\nV prostoru se nachází: Banán, Sáček, Šátek"+
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení," +
+            " Pavilon opic" +
+            "\nV prostoru se nachází: Banán_vysoko_na_stromě, Sáček, Šátek"+
             "\nV rukách máte:",
 
             "Start",
             new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
-            new String[] { "Banán", "Sáček", "Šátek" },
+            new String[] { "Banán_vysoko_na_stromě", "Sáček", "Šátek" },
             new String[] {},
             tsUNKNOWN ),
 
@@ -372,17 +419,18 @@ public class ScenarioManager extends AScenarioManager
 
 
         new ScenarioStep( "",
-            "Zadal(a) jste prázdný příkaz" +
+            "Zadal(a) jste prázdný příkaz." +
             "\nPro nápovědu zadejte příkaz ?"+
 
             "\n\nNacházíte se v prostoru: Cesta" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení, Pavilon opic" +
-            "\nV prostoru se nachází: Banán, Sáček, Šátek"+
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů," +
+            " Občerstvení, Pavilon opic" +
+            "\nV prostoru se nachází: Banán_vysoko_na_stromě, Sáček, Šátek"+
             "\nV rukách máte:",
 
             "Start",
             new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
-            new String[] { "Banán", "Sáček", "Šátek" },
+            new String[] { "Banán_vysoko_na_stromě", "Sáček", "Šátek" },
             new String[] {},
             tsEMPTY ),
 
@@ -391,13 +439,14 @@ public class ScenarioManager extends AScenarioManager
 
              "Zvedl(a) jste Sáček" +
             "\n\nNacházíte se v prostoru: Cesta" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení, Pavilon opic" +
-            "\nV prostoru se nachází: Banán, Šátek"+
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Občerstvení," +
+            " Pavilon opic" +
+            "\nV prostoru se nachází: Banán_vysoko_na_stromě, Šátek"+
             "\nV rukách máte: Sáček",
 
             "Start",
             new String[] { "Pavilon_krokodýlů", "Občerstvení", "Pavilon_opic" },
-            new String[] { "Banán", "Šátek" },
+            new String[] { "Banán_vysoko_na_stromě", "Šátek" },
             new String[] {"Sáček"},
             tsPICK_UP ),
 
@@ -405,9 +454,17 @@ public class ScenarioManager extends AScenarioManager
 
             new ScenarioStep( "jdi Občerstvení",
 
-            "Vkročil(a) jste do Občerstvení"  +
+
+                             "Vstoupil(a) jste do občerstvení." +
+                                    "Jednu z věcí \n budete potřebovat, pro" +
+                                     " získání jídla \n pro hladová " +
+                                     "zvířata v ZOO, aby vám" +
+                                     " umožnila dostat \n se odtud." +
+                                     " Proto pečlivě" +
+                                     " vybírejte, co si odtud vezmete."+
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon " +
+            "opic" +
             "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
             "\nV rukách máte: Sáček",
 
@@ -421,7 +478,8 @@ public class ScenarioManager extends AScenarioManager
             new ScenarioStep( "jdi Terária_s_hady",
             "Do zadaného prostoru odtud nemůžete přejít."  +
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, " +
+            "Pavilon opic" +
             "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
             "\nV rukách máte: Sáček",
 
@@ -435,7 +493,8 @@ public class ScenarioManager extends AScenarioManager
           new ScenarioStep( "zvedni Občerstvení",
             "Zadaný předmět v místnosti není: Občerstvení"  +
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon" +
+            " opic" +
             "\nV prostoru se nachází: Salám, Pití, Cigarety, Pastička"+
             "\nV rukách máte: Sáček",
 
@@ -465,7 +524,8 @@ public class ScenarioManager extends AScenarioManager
 
              "Zvedl(a) jste Pití"  +
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, " +
+            "Pavilon opic" +
             "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
             "\nV rukách máte: Sáček, Pití",
 
@@ -481,7 +541,8 @@ public class ScenarioManager extends AScenarioManager
 
              "Máte plné ruce a předmět nemůžete vzít."  +
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, " +
+            "Pavilon opic" +
             "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
             "\nV rukách máte: Sáček, Pití",
 
@@ -493,8 +554,8 @@ public class ScenarioManager extends AScenarioManager
 
 
             new ScenarioStep("?",
-            "\nPříkazy, které je možno v průběhu hry zadat:" +
-            "\n============================================",
+           " Cílem hry je dostat se ze ZOO, kterou můžete opustit jen" +
+                "z místnosti Exit.",
             //Text pokračuje vyjmenováním příkazů a jejich popisů
             //a končí standardním popisem aktuální situace
 
@@ -510,7 +571,8 @@ public class ScenarioManager extends AScenarioManager
 
              "Nezadali jste objekt, který chcete položit"  +
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start," +
+            " Pavilon opic" +
             "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
             "\nV rukách máte: Sáček, Pití",
 
@@ -527,7 +589,8 @@ public class ScenarioManager extends AScenarioManager
 
              "Nezadali jste objekt, který chcete zvednout"  +
             "\n\nNacházíte se v prostoru: Občerstvení" +
-            "\nMůžete přejít do prostoru: Pavilon krokodýlů, Start, Pavilon opic" +
+            "\nMůžete přejít do prostoru: Pavilon krokodýlů, " +
+            "Start, Pavilon opic" +
             "\nV prostoru se nachází: Salám, Cigarety, Pastička"+
             "\nV rukách máte: Sáček, Pití",
 
@@ -541,7 +604,8 @@ public class ScenarioManager extends AScenarioManager
 
 
          new ScenarioStep( "jdi Pavilon_krokodýlů",
-            "Na krokodýly je moc velká zima, proto celý pavilon spí a vy můžete bezpečně projít"+
+            "Na krokodýly je moc velká zima, proto celý pavilon spí a vy " +
+            "můžete bezpečně projít."+
             "\nNacházíte se v prostoru: Pavilon_krokodýlů"+
             "\nMůžete přejít do prostoru: Občerstvení, Pavilon_hlodavců, Start"+
             "\nV prostoru se nachází:" +
@@ -553,8 +617,30 @@ public class ScenarioManager extends AScenarioManager
             new String[] {"Sáček", "Pití"},
             tsMOVE ),
 
+         new ScenarioStep( "jdi Pavilon_hlodavců",
+                    "Vkročil(a) jste do Pavilonu hlodavců kde se prohánějí skupinky " +
+            "od hrabošů přes veverky po bobry." +
+            " V dalších " +
+                              "pavilonech by se vám mohlo některé zvíře " +
+                              "odtud hodit jako krmivo."+
+            "\n po bobry."+
+            "\n\nNacházíte se v prostoru: Pavilon_hlodavců "+
+            "\nMůžete přejít do prostoru: Pavilon_krokodýlů, Výběh_s_koňmi," +
+            " Terária_s_hady" +
+            "\nV prostoru se nachází: Myš, Klec" +
+            "\nV rukách máte: ",
+
+            "Pavilon_hlodavců",
+            new String[] { "Pavilon_krokodýlů", "Výběh_s_koňmi",
+                                                "Terária_s_hady" },
+            new String[] { "Myš", "Klec" },
+            new String[] {"Sáček", "Pití"},
+            tsMOVE ),
+
       new ScenarioStep( "jdi Terária_s_hady",
-            "Přesunul(a) jste se do Terária s hady"+
+           "Vkročil(a) jste do Terária s hady, kteří po vás mlsně koukají." +
+            "\nNa výměnu za jídlo pro vás mají vědro s vodou." +
+            " Nakrmte je nebo raději zmizte."+
             "\nNacházíte se v prostoru: Terária_s_hady"+
             "\nMůžete přejít do prostoru: Sloni, Pavilon_hlodavců"+
             "\nV prostoru se nachází: Had, Voda" +
@@ -567,7 +653,7 @@ public class ScenarioManager extends AScenarioManager
             tsMOVE ),
 
      new ScenarioStep( "zvedni Had",
-            "Tento objekt nelze zvednou"+
+            "Tento objekt nelze zvednout."+
             "\nNacházíte se v prostoru: Terária_s_hady"+
             "\nMůžete přejít do prostoru: Sloni, Pavilon_hlodavců"+
             "\nV prostoru se nachází: Had, Voda" +
@@ -602,7 +688,7 @@ public class ScenarioManager extends AScenarioManager
      new ScenarioStep( "konec",
 
             " Děkuji, že jste si zahrál(a)"+
-            "\nmoji hru.",
+            " moji hru.",
 
             "Terária_s_hady",
             new String[] { "Sloni", "Pavilon_hlodavců" },
@@ -717,18 +803,19 @@ public class ScenarioManager extends AScenarioManager
      * Testování funkce hry prováděné postupně
      * prostřednictvím všech scénářů daného správce
      */
-    public static void testMyGame()
+  public static void testMyGame()
     {
-        IGame     hra  = MANAGER.getGame();
+          IGame     hra  = Game.getInstance();
+//        IGame     hra  = MANAGER.getGame();
         _Test_101 test = _Test_101.getInstance(hra);
         test.testGame();
     }
 
-
     /** @param args Parametry příkazového řádku - nepoužívané. */
     public static void main( String[] args )
     {
-        testMyScenarioManager();
-        simulateBasicScenarios();
+//        testMyScenarioManager();
+//        simulateBasicScenarios();
+        testMyGame();
     }
 }
